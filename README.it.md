@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="docs/assets/banner.png" alt="ego lite" width="100%" />
+<img src="docs/assets/banner.png" alt="ego tiny" width="100%" />
 
 **Il browser più veloce per automatizzare il web con gli agenti AI**
 
@@ -30,9 +30,9 @@
 
 </div>
 
-ego (lite) è un browser in cui tu e i tuoi agenti AI lavorate in parallelo. I tuoi agenti eseguono i propri task nel browser dentro Space separati — spazi di lavoro isolati dentro lo stesso browser — mentre tu continui a navigare nel tuo Space, così nessun agente ti porta mai via il browser. E l'automazione stessa termina più in fretta, con meno token.
+ego (tiny) è un browser in cui tu e i tuoi agenti AI lavorate in parallelo. I tuoi agenti eseguono i propri task nel browser dentro Space separati — spazi di lavoro isolati dentro lo stesso browser — mentre tu continui a navigare nel tuo Space, così nessun agente ti porta mai via il browser. E l'automazione stessa termina più in fretta, con meno token.
 
-Strumenti come browser-use e agent-browser sono un ponte verso il browser, non un browser: non ne hanno uno proprio, quindi devono pilotarne uno separato. Il risultato è che i tuoi dati di navigazione raramente arrivano intatti nel browser che l'agente pilota, la connessione è instabile e tu e l'agente finite per contendervi il controllo del browser. ego lite è un unico browser pensato fin dall'inizio per essere condiviso da entrambi. Nessuna configurazione extra, e l'agente raggiunge sempre i tuoi login e le tue schede reali tramite `ego-browser`.
+Strumenti come browser-use e agent-browser sono un ponte verso il browser, non un browser: non ne hanno uno proprio, quindi devono pilotarne uno separato. Il risultato è che i tuoi dati di navigazione raramente arrivano intatti nel browser che l'agente pilota, la connessione è instabile e tu e l'agente finite per contendervi il controllo del browser. ego tiny è un unico browser pensato fin dall'inizio per essere condiviso da entrambi. Nessuna configurazione extra, e l'agente raggiunge sempre i tuoi login e le tue schede reali tramite `ego-browser`.
 
 ## Demo
 
@@ -40,7 +40,7 @@ https://github.com/user-attachments/assets/ffe7954b-58ee-411e-b35d-ec30c58a08bc
 
 ## Avvio rapido
 
-Oggi ego lite funziona su macOS e Windows, e Linux è nella [roadmap](https://lite.ego.app/roadmap).
+Oggi ego tiny funziona su macOS e Windows, e Linux è nella [roadmap](https://lite.ego.app/roadmap).
 
 ### 1. Installa
 
@@ -48,11 +48,11 @@ Scegli la soluzione più adatta al tuo flusso di lavoro.
 
 **1.1 Scarica l'app**
 
-<a href="https://cdn.ego.app/setup/macos/arm64/egolite-Y7MbxKIuhzFB.dmg"><img src="https://img.shields.io/badge/⬇%20Apple%20Silicon-.dmg-000000?style=for-the-badge&logo=apple&logoColor=white" alt="Download ego lite for Apple Silicon" /></a>
-<a href="https://cdn.ego.app/setup/macos/x64/egolite-Y7MbxKIuhzFB.dmg"><img src="https://img.shields.io/badge/⬇%20Intel-.dmg-000000?style=for-the-badge&logo=apple&logoColor=white" alt="Download ego lite for Intel" /></a>
-<a href="https://cdn.ego.app/setup/windows/x64/egoliteSetup-Y7MbxKIuhzFB.exe"><img src="https://img.shields.io/badge/⬇%20Windows-.exe-000000?style=for-the-badge&logo=data:image/svg%2Bxml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI%2BPHBhdGggZmlsbD0iI2ZmZiIgZD0iTTAgMGgxMS4zNzd2MTEuMzcySDB6bTEyLjYyMyAwSDI0djExLjM3MkgxMi42MjN6TTAgMTIuNjIzaDExLjM3N1YyNEgwem0xMi42MjMgMEgyNFYyNEgxMi42MjN6Ii8%2BPC9zdmc%2B" alt="Download ego lite for Windows" /></a>
+<a href="https://cdn.ego.app/setup/macos/arm64/egolite-Y7MbxKIuhzFB.dmg"><img src="https://img.shields.io/badge/⬇%20Apple%20Silicon-.dmg-000000?style=for-the-badge&logo=apple&logoColor=white" alt="Download ego tiny for Apple Silicon" /></a>
+<a href="https://cdn.ego.app/setup/macos/x64/egolite-Y7MbxKIuhzFB.dmg"><img src="https://img.shields.io/badge/⬇%20Intel-.dmg-000000?style=for-the-badge&logo=apple&logoColor=white" alt="Download ego tiny for Intel" /></a>
+<a href="https://cdn.ego.app/setup/windows/x64/egoliteSetup-Y7MbxKIuhzFB.exe"><img src="https://img.shields.io/badge/⬇%20Windows-.exe-000000?style=for-the-badge&logo=data:image/svg%2Bxml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI%2BPHBhdGggZmlsbD0iI2ZmZiIgZD0iTTAgMGgxMS4zNzd2MTEuMzcySDB6bTEyLjYyMyAwSDI0djExLjM3MkgxMi42MjN6TTAgMTIuNjIzaDExLjM3N1YyNEgwem0xMi42MjMgMEgyNFYyNEgxMi42MjN6Ii8%2BPC9zdmc%2B" alt="Download ego tiny for Windows" /></a>
 
-Fai clic per scaricare, poi apri il file e completa l'installazione. In entrambi i casi, ego lite aggiunge la skill `ego-browser` alla cartella delle skill di ogni agente sul tuo computer.
+Fai clic per scaricare, poi apri il file e completa l'installazione. In entrambi i casi, ego tiny aggiunge la skill `ego-browser` alla cartella delle skill di ogni agente sul tuo computer.
 
 **1.2 Aggiungi la skill con npx**
 
@@ -62,19 +62,19 @@ Installa solo la skill `ego-browser`:
 npx skills add citrolabs/ego-lite
 ```
 
-La prima volta che il tuo agente esegue un task nel browser, ti guida nell'installazione dell'app ego lite.
+La prima volta che il tuo agente esegue un task nel browser, ti guida nell'installazione dell'app ego tiny.
 
 **1.3 Fai configurare tutto al tuo agente**
 
 Incolla questo nel tuo agente:
 
 ```
-Configura ego lite per me: https://github.com/citrolabs/ego-lite
+Configura ego tiny per me: https://github.com/citrolabs/ego-lite
 
-Leggi `skills/ego-browser/references/install.md` e segui i passaggi per installare ego lite.
+Leggi `skills/ego-browser/references/install.md` e segui i passaggi per installare ego tiny.
 ```
 
-Al primo avvio ego lite ti fa una sola domanda: se migrare i tuoi dati di Chrome. Rispondi di sì e il tuo agente eredita i login, i cookie, le estensioni e i preferiti che hai già.
+Al primo avvio ego tiny ti fa una sola domanda: se migrare i tuoi dati di Chrome. Rispondi di sì e il tuo agente eredita i login, i cookie, le estensioni e i preferiti che hai già.
 
 ### 2. Prova il tuo primo task
 
@@ -86,24 +86,24 @@ ego-browser segui @ego_agent su x.com per me
 
 L'agente usa la skill `ego-browser`, apre la pagina nel proprio Space, ne legge uno Snapshot — la rappresentazione testuale della pagina su cui il modello ragiona —, agisce sulla pagina e ti riporta il risultato, mentre le tue schede restano intatte.
 
-I tuoi dati di navigazione, i cookie e tutto il resto che il browser contiene restano sul tuo dispositivo. ego lite limita volutamente la raccolta dati: solo semplici segnali di prodotto, per esempio se hai impostato o no ego lite come browser predefinito.
+I tuoi dati di navigazione, i cookie e tutto il resto che il browser contiene restano sul tuo dispositivo. ego tiny limita volutamente la raccolta dati: solo semplici segnali di prodotto, per esempio se hai impostato o no ego tiny come browser predefinito.
 
-## Punti di forza di ego lite
+## Punti di forza di ego tiny
 
 | Funzionalità | Cosa fa |
 |---|---|
-| **Basato sul codice, non sulla CLI: task complessi più veloci e con meno token** | Le funzionalità che ego lite espone all'agente sono incapsulate in funzioni JavaScript che l'agente richiama direttamente. Così l'agente fa ciò che gli riesce meglio: scrivere codice. Condensa un task a più passaggi in un unico output, invece di restare bloccato nel ciclo "chiamo due comandi, guardo il risultato, ne chiamo altri due". Rispetto all'approccio CLI tradizionale, i flussi di lavoro complessi terminano molto più in fretta, con percentuali di successo più alte, molte meno tool call per task e un costo per task molto più basso. |
-| **Uno Space dedicato per ogni agente** | ego lite assegna a ogni agente uno Space completamente isolato. Tu navighi in primo piano, il tuo agente lavora in background e non vi intralciate a vicenda. In qualsiasi momento vedi in quale Space sta lavorando un agente e, quando vuoi, puoi prenderne il controllo o fermarlo. |
+| **Basato sul codice, non sulla CLI: task complessi più veloci e con meno token** | Le funzionalità che ego tiny espone all'agente sono incapsulate in funzioni JavaScript che l'agente richiama direttamente. Così l'agente fa ciò che gli riesce meglio: scrivere codice. Condensa un task a più passaggi in un unico output, invece di restare bloccato nel ciclo "chiamo due comandi, guardo il risultato, ne chiamo altri due". Rispetto all'approccio CLI tradizionale, i flussi di lavoro complessi terminano molto più in fretta, con percentuali di successo più alte, molte meno tool call per task e un costo per task molto più basso. |
+| **Uno Space dedicato per ogni agente** | ego tiny assegna a ogni agente uno Space completamente isolato. Tu navighi in primo piano, il tuo agente lavora in background e non vi intralciate a vicenda. In qualsiasi momento vedi in quale Space sta lavorando un agente e, quando vuoi, puoi prenderne il controllo o fermarlo. |
 | **I tuoi agenti lavorano in parallelo negli Space, workspace separati nello stesso browser** | Ogni Space ha il proprio agente AI o il proprio task, tutti in esecuzione contemporaneamente. Claude Code arricchisce 10 lead in 10 Space paralleli, mentre Codex raccoglie dati da 5 siti concorrenti in altri 5 Space. Non si scontrano né ti rubano le schede. Il mouse resta dove l'hai lasciato. |
-| **Lo Snapshot di pagina più potente sul mercato** | Grazie a una personalizzazione a livello di motore del browser, ego lite produce gli Snapshot di pagina di qualità più alta, la rappresentazione su cui i modelli testuali si basano per "vedere" e agire su una pagina web. Gestisce in modo affidabile i casi più difficili, come gli iframe annidati in profondità, proprio dove gli altri approcci falliscono sistematicamente. |
-| **Qualsiasi agente può guidarlo tramite `ego-browser`** | `ego-browser` è il livello di collegamento tra la CLI di qualsiasi agente (Claude Code, Codex, Cursor o una CLI che hai scritto tu) ed ego lite. Espone il browser come un set di strumenti JavaScript che girano dentro la pagina: snapshot, fill, click, wait, navigate, capture. L'agente scrive uno snippet JavaScript che richiama questi strumenti, e `ego-browser` lo esegue sulla pagina in un solo passaggio. |
-| **Più lo usi, più il tuo agente diventa veloce: l'esperienza si accumula** *(in arrivo)* | La maggior parte del tempo che un agente dedica ai task nel browser se ne va in tentativi ed errori. La Skill ufficiale di ego lite condensa ogni azione riuscita in strumenti e flussi di lavoro riutilizzabili, così i task simili eseguiti in seguito sono fino a 5x più veloci. |
+| **Lo Snapshot di pagina più potente sul mercato** | Grazie a una personalizzazione a livello di motore del browser, ego tiny produce gli Snapshot di pagina di qualità più alta, la rappresentazione su cui i modelli testuali si basano per "vedere" e agire su una pagina web. Gestisce in modo affidabile i casi più difficili, come gli iframe annidati in profondità, proprio dove gli altri approcci falliscono sistematicamente. |
+| **Qualsiasi agente può guidarlo tramite `ego-browser`** | `ego-browser` è il livello di collegamento tra la CLI di qualsiasi agente (Claude Code, Codex, Cursor o una CLI che hai scritto tu) ed ego tiny. Espone il browser come un set di strumenti JavaScript che girano dentro la pagina: snapshot, fill, click, wait, navigate, capture. L'agente scrive uno snippet JavaScript che richiama questi strumenti, e `ego-browser` lo esegue sulla pagina in un solo passaggio. |
+| **Più lo usi, più il tuo agente diventa veloce: l'esperienza si accumula** *(in arrivo)* | La maggior parte del tempo che un agente dedica ai task nel browser se ne va in tentativi ed errori. La Skill ufficiale di ego tiny condensa ogni azione riuscita in strumenti e flussi di lavoro riutilizzabili, così i task simili eseguiti in seguito sono fino a 5x più veloci. |
 
-## ego lite rispetto ai prodotti esistenti
+## ego tiny rispetto ai prodotti esistenti
 
 La maggior parte degli strumenti è in grado di automatizzare un browser. Le domande che contano davvero sono: che browser si ritrova l'agente, se nel frattempo puoi continuare a lavorare e se lo strumento è pensato per l'agente che usi già o per un agente integrato nel browser stesso.
 
-| Funzionalità | ego lite | Estensioni del browser<br><sub>Claude/Codex in Chrome</sub> | Browser integrati<br><sub>Browser integrato di Claude/ChatGPT</sub> | Browser cloud<br><sub>Browserbase/Browser Use</sub> | CLI per browser<br><sub>playwright-cli/Browser Harness</sub> | Browser AI<br><sub>Comet/Dia</sub> |
+| Funzionalità | ego tiny | Estensioni del browser<br><sub>Claude/Codex in Chrome</sub> | Browser integrati<br><sub>Browser integrato di Claude/ChatGPT</sub> | Browser cloud<br><sub>Browserbase/Browser Use</sub> | CLI per browser<br><sub>playwright-cli/Browser Harness</sub> | Browser AI<br><sub>Comet/Dia</sub> |
 |---|:---:|:---:|:---:|:---:|:---:|:---:|
 | Funziona con qualsiasi agente AI | ✓ | — | — | ✓ | ✓ | — |
 | Usa i tuoi accessi del browser | ✓ | ✓ | — | — | — | ✓ |
@@ -154,4 +154,4 @@ Tutorial, il riferimento completo degli strumenti e le guide di integrazione son
 
 ## Licenza
 
-I contenuti di questo repository sono rilasciati sotto [licenza MIT](LICENSE). Il browser ego lite è un download separato e gratuito.
+I contenuti di questo repository sono rilasciati sotto [licenza MIT](LICENSE). Il browser ego tiny è un download separato e gratuito.

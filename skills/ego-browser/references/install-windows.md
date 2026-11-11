@@ -1,10 +1,10 @@
-# Install ego lite on Windows
+# Install ego tiny on Windows
 
-Read `install.md` first; it covers upgrading an older ego lite and the onboarding step shared by every platform. This file has the Windows install steps, the commands that confirm the installation, and Windows troubleshooting.
+Read `install.md` first; it covers upgrading an older ego tiny and the onboarding step shared by every platform. This file has the Windows install steps, the commands that confirm the installation, and Windows troubleshooting.
 
 ## Run the installer
 
-There is no install script for Windows. Have the user download the installer from https://lite.ego.app/ and run it, then open ego lite.
+There is no install script for Windows. Have the user download the installer from https://lite.ego.app/ and run it, then open ego tiny.
 
 After the app opens, the user completes the first-run onboarding in the app (see `install.md`). Onboarding registers the `ego-browser` command on the PATH. The PATH entry only reaches processes started afterwards, so open a new terminal before checking for the command.
 
@@ -44,7 +44,7 @@ console.log('ego-browser ready')
 EOF
 ```
 
-Printing `ego-browser ready` means the environment is ready. Finally confirm that the installed ego lite prints its usage guide:
+Printing `ego-browser ready` means the environment is ready. Finally confirm that the installed ego tiny prints its usage guide:
 
 ```powershell
 ego-browser skill
@@ -55,4 +55,4 @@ Then return to the user's original task, as `install.md` describes.
 ## Troubleshooting
 
 - **SmartScreen blocks the installer**: have the user choose "More info" and then "Run anyway" in the SmartScreen dialog.
-- **Command still unavailable after onboarding**: open a new terminal first, because an existing one keeps the PATH it started with. Otherwise have the user reopen ego lite, finish onboarding, and retry.
+- **Command still unavailable after onboarding**: open a new terminal first, because an existing one keeps the PATH it started with. Otherwise have the user reopen ego tiny, finish onboarding, and retry.

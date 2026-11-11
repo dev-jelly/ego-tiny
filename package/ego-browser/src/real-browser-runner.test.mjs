@@ -9,7 +9,7 @@ import { pageActionabilityCase } from "../scripts/real-browser-e2e/cases/page-ac
 import { pageScrolledScreenshotCase } from "../scripts/real-browser-e2e/cases/page-screenshot.mjs";
 import { parseOnlyCases } from "../scripts/real-browser-e2e/runner.mjs";
 
-test("real-browser E2E honors an explicit Ego Lite CLI", () => {
+test("real-browser E2E honors an explicit Ego Tiny CLI", () => {
   assert.equal(
     resolveEgoBrowserCli({
       configured: "/custom/ego-lite/ego-browser",
@@ -20,7 +20,7 @@ test("real-browser E2E honors an explicit Ego Lite CLI", () => {
   );
 });
 
-test("real-browser E2E prefers the stable Ego Lite app path on macOS", () => {
+test("real-browser E2E prefers the stable Ego Tiny app path on macOS", () => {
   assert.equal(
     resolveEgoBrowserCli({
       configured: "",

@@ -3,7 +3,7 @@ export function pageSnapshotSubtreeCase() {
     const task = await taskSpace(taskName);
     const page = await newPageAt(task, baseUrl + "/?workflow=page-snapshot-subtree");
 
-    // Ego Lite 0.5.0.19 identifies subtree roots by backendNodeId alone. Those
+    // Ego Tiny 0.5.0.19 identifies subtree roots by backendNodeId alone. Those
     // ids are only frame-local, so keep this positive-path fixture single-frame.
     await page.evaluate(
       "document.querySelectorAll('iframe').forEach((frame) => frame.remove())"

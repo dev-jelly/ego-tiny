@@ -1167,7 +1167,7 @@ for (const targetType of ["worker", "worklet", "shared_worker"]) {
           request.method === "Target.setAutoAttach" &&
           request.sessionId === mainSessionId,
       );
-      // No catch-all exclude: Ego Lite pauses excluded targets without
+      // No catch-all exclude: Ego Tiny pauses excluded targets without
       // attaching them, which leaves them paused forever.
       assert.deepEqual(autoAttach?.params?.filter, [{}]);
 

@@ -1,6 +1,6 @@
 # Native JavaScript dialog requirement
 
-Ego Lite 0.5.0.12 keeps page-authored `alert`, `confirm`, and `prompt` dialogs
+Ego Tiny 0.5.0.12 keeps page-authored `alert`, `confirm`, and `prompt` dialogs
 under Agent control, including a confirm opened by a file input change handler.
 The real-browser regression covers these paths without a takeover or recovery
 step.
@@ -30,7 +30,7 @@ A dialog can outlive the `ego-browser nodejs` invocation that opened it. The
 SDK keeps dialog state per process, and while a dialog is open Chromium does
 not answer renderer commands, including `Page.enable`. The next invocation
 therefore cannot discover the dialog and every command it sends times out.
-Ego Lite 0.5.2.2 does not meet this requirement yet: in local runs the dialog
+Ego Tiny 0.5.2.2 does not meet this requirement yet: in local runs the dialog
 was dismissed when the invocation exited, and sometimes the TaskSpace also
 moved to user control. In the field, the dialog stayed open and the next
 invocation timed out. When an invocation exits with a dialog open, the bridge

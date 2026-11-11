@@ -158,7 +158,7 @@ await source.goto("https://example.com/releases");
 ```
 
 Do not inspect or select profiles unless the user explicitly requests a
-particular Ego Lite profile. A `profileId` applies only when creating a space;
+particular Ego Tiny profile. A `profileId` applies only when creating a space;
 use `help("profiles")` for the exact workflow.
 
 Supported TaskSpace API:
@@ -574,7 +574,7 @@ Use `page.close()` only while the task is still in progress. Do not call
 `finish()` when the task stops for user control or an error.
 
 If the final output contains `[ego-browser:notice]`, finish the current browser
-task, tell the user an Ego Lite update is available, and run
+task, tell the user an Ego Tiny update is available, and run
 `ego-browser upgrade` only with their approval. Run `ego-browser skill` again
 after the upgrade.
 

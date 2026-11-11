@@ -26,14 +26,14 @@ export function egoSource(body, context) {
     const metadataPath = ${JSON.stringify(metadataPath)};
     const keepTaskSpace = ${JSON.stringify(keepTaskSpace)};
 
-    // The Ego Lite launcher does not forward arbitrary environment variables
+    // The Ego Tiny launcher does not forward arbitrary environment variables
     // to the SDK Node process. Set isolated test configuration before the first
     // taskSpace() call; page-model reads these values lazily.
     process.env.EGO_BROWSER_STATE_DIR = join(tempDir, "runtime-state");
     process.env.EGO_BROWSER_PAGE_BUDGET = "3";
 
     // Ledger files are scoped by browser instance (this isolated state
-    // directory belongs to the one Ego Lite instance under test) and
+    // directory belongs to the one Ego Tiny instance under test) and
     // versioned: every SDK write creates space-<id>@<instance>.<n>.json and
     // removes the versions before it. The current ledger is the highest
     // version that parses, and a path listed a moment ago may already be

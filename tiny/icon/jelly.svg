@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FFF4D6"/>
+      <stop offset="1" stop-color="#FFD9E8"/>
+    </linearGradient>
+    <linearGradient id="body" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FF9BD0"/>
+      <stop offset="0.55" stop-color="#F45FB0"/>
+      <stop offset="1" stop-color="#B847D6"/>
+    </linearGradient>
+    <linearGradient id="shine" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity="0.85"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="plate" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FFFFFF"/>
+      <stop offset="1" stop-color="#E9DDF5"/>
+    </linearGradient>
+  </defs>
+
+  <!-- app tile -->
+  <rect x="100" y="100" width="824" height="824" rx="186" ry="186" fill="url(#bg)"/>
+
+  <!-- plate -->
+  <ellipse cx="512" cy="742" rx="318" ry="52" fill="#C9A7E0" opacity="0.45"/>
+  <ellipse cx="512" cy="728" rx="318" ry="52" fill="url(#plate)"/>
+
+  <!-- jelly body: wobbly dome with a scalloped foot -->
+  <path fill="url(#body)" d="
+    M 262 708
+    C 250 520, 300 300, 512 290
+    C 724 300, 774 520, 762 708
+    C 762 748, 708 752, 692 716
+    C 676 752, 618 754, 602 718
+    C 586 754, 528 756, 512 720
+    C 496 756, 438 754, 422 718
+    C 406 754, 348 752, 332 716
+    C 316 752, 262 748, 262 708 Z"/>
+
+  <!-- inner glow band -->
+  <path fill="#FFFFFF" opacity="0.16" d="
+    M 300 640 C 300 470, 350 350, 512 340 C 674 350, 724 470, 724 640
+    C 660 600, 364 600, 300 640 Z"/>
+
+  <!-- glossy highlight -->
+  <path fill="url(#shine)" d="
+    M 338 520 C 338 420, 390 348, 470 332 C 420 372, 392 440, 388 530
+    C 386 560, 340 556, 338 520 Z"/>
+  <ellipse cx="604" cy="372" rx="34" ry="18" fill="#FFFFFF" opacity="0.7" transform="rotate(24 604 372)"/>
+
+  <!-- face -->
+  <ellipse cx="436" cy="566" rx="26" ry="32" fill="#4A1F5E"/>
+  <ellipse cx="588" cy="566" rx="26" ry="32" fill="#4A1F5E"/>
+  <circle cx="445" cy="554" r="9" fill="#FFFFFF"/>
+  <circle cx="597" cy="554" r="9" fill="#FFFFFF"/>
+  <path d="M 478 606 Q 512 640 546 606" fill="none" stroke="#4A1F5E" stroke-width="12" stroke-linecap="round"/>
+  <ellipse cx="386" cy="616" rx="30" ry="18" fill="#FFFFFF" opacity="0.35"/>
+  <ellipse cx="638" cy="616" rx="30" ry="18" fill="#FFFFFF" opacity="0.35"/>
+</svg>

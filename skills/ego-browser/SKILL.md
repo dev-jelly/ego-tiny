@@ -16,7 +16,7 @@ ego-browser skill
 ```
 
 and follow its output. It prints the usage guide that matches the installed
-ego lite version. Run it again after `ego-browser upgrade`, or when any output
+ego tiny version. Run it again after `ego-browser upgrade`, or when any output
 says to.
 
 The guide ends with a line starting `[ego-browser:skill] end of guide`. If that
@@ -26,7 +26,7 @@ in parts, for example `ego-browser skill > "$TMPDIR/ego-browser-skill.md"`, or
 
 ## References
 
-- [Install or upgrade ego lite](references/install.md) — read when
+- [Install or upgrade ego tiny](references/install.md) — read when
   `ego-browser` is not found, or `skill` is an unknown command. It links to
   the steps for your operating system:
   [macOS](references/install-macos.md) or

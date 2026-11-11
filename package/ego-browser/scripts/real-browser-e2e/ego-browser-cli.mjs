@@ -1,7 +1,7 @@
 import { existsSync } from "node:fs";
 
 export const MACOS_EGO_LITE_CLI =
-  "/Applications/ego lite.app/Contents/Frameworks/ego Framework.framework/Versions/Current/Helpers/ego-browser";
+  "/Applications/ego tiny.app/Contents/Frameworks/ego Framework.framework/Versions/Current/Helpers/ego-browser";
 
 export function resolveEgoBrowserCli({
   configured = process.env.EGO_BROWSER_REAL_E2E_CLI,

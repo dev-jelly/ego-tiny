@@ -6,7 +6,7 @@ set -eu
 # Default package URL and installation paths.
 DMG_URL_ARM64="https://cdn.ego.app/setup/macos/arm64/egolite-fHoqgZ74bOEM.dmg"
 DMG_URL_X64="https://cdn.ego.app/setup/macos/x64/egolite-fHoqgZ74bOEM.dmg"
-APP_NAME="ego lite"
+APP_NAME="ego tiny"
 APP_BUNDLE_NAME="$APP_NAME.app"
 APP_PATH="/Applications/$APP_BUNDLE_NAME"
 USER_APP_PATH="$HOME/Applications/$APP_BUNDLE_NAME"
@@ -110,7 +110,7 @@ find_ego_browser_in_app() {
 is_ego_lite_app() {
 	app_path="$1"
 
-	# The directory exists and contains a working ego-browser — ego lite is considered installed.
+	# The directory exists and contains a working ego-browser — ego tiny is considered installed.
 	[ -d "$app_path" ] || return 1
 	find_ego_browser_in_app "$app_path" >/dev/null
 }

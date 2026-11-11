@@ -1,10 +1,10 @@
 # Contributing to ego-browser
 
 Thanks for contributing! This repository contains the **JavaScript SDK and agent
-Skill** used by ego lite. The browser application and its native bindings are
-provided separately by the installed ego lite app.
+Skill** used by ego tiny. The browser application and its native bindings are
+provided separately by the installed ego tiny app.
 
-![ego lite architecture: AI agents, the Skill, the Node.js runtime, and isolated task spaces](docs/assets/ego-lite-architecture.png)
+![ego tiny architecture: AI agents, the Skill, the Node.js runtime, and isolated task spaces](docs/assets/ego-lite-architecture.png)
 
 For the product overview, see [README.md](README.md). For the agent-facing API,
 read the [usage guide](package/ego-browser/skill-body/SKILL.md) and `help()`.
@@ -14,7 +14,7 @@ in [AGENTS.md](AGENTS.md).
 ## Set up and build
 
 Install Node.js **22 or later** and npm. Real-browser development also requires
-ego lite with onboarding complete and its `ego-browser` CLI available on `PATH`.
+ego tiny with onboarding complete and its `ego-browser` CLI available on `PATH`.
 
 From the repository root:
 
@@ -34,7 +34,7 @@ Local dependency installation also installs the Git hooks configured in
 
 | Output                   | Purpose                                                                                                                    |
 | ------------------------ | -------------------------------------------------------------------------------------------------------------------------- |
-| `dist/out/index.js`      | The single-file ESM SDK loaded by the ego lite CLI or embedded host. Use this file for browser debugging and distribution. |
+| `dist/out/index.js`      | The single-file ESM SDK loaded by the ego tiny CLI or embedded host. Use this file for browser debugging and distribution. |
 | `dist/out/ego-browser/`  | The matching usage guide `SKILL.md`, printed by `ego-browser skill`.                                                       |
 | `dist/out/agent-skills/` | The entry Skill and site `learnings/` the browser installs into `~/.agents/skills/ego-browser`.                            |
 | `dist/src/`              | Compiled runtime modules used by the repository's unit tests.                                                              |
@@ -50,7 +50,7 @@ Edit source files under `src/`, `scripts/`, `skill-body/`, or `skills/ego-browse
 Build output is generated and must not be committed. The build replaces `dist/`
 and uses `.build.lock` to prevent concurrent builds.
 
-## Run the SDK in ego lite
+## Run the SDK in ego tiny
 
 ### Load a build for one command
 
@@ -76,12 +76,12 @@ help();
 EOF
 ```
 
-Browser actions still require the native environment provided by ego lite. The
+Browser actions still require the native environment provided by ego tiny. The
 standalone repository CLI does not take the installed CLI's `nodejs` subcommand.
 
 ### Use the macOS debug SDK path
 
-For repeated local debugging, ego lite can load the SDK from:
+For repeated local debugging, ego tiny can load the SDK from:
 
 ```text
 ~/Library/Application Support/Citro Labs/debug/index.js
@@ -156,8 +156,8 @@ or task-space lifecycle. It starts a local fixture server, creates a unique
 temporary task space, loads the current build through `--sdk-path`, and cleans up.
 It does not depend on the debug override above. Do not manually switch its task
 space, take control, or change the SDK while it is running. On macOS it selects
-the ego lite app's CLI; use `EGO_BROWSER_REAL_E2E_CLI` to select another installed
-ego lite CLI explicitly.
+the ego tiny app's CLI; use `EGO_BROWSER_REAL_E2E_CLI` to select another installed
+ego tiny CLI explicitly.
 
 ## Find the code to change
 
@@ -233,4 +233,4 @@ git push origin vX.Y.Z
 Release jobs reuse the tested build and package `dist/out/` into
 `ego-browser-<tag>.zip`. Notes are generated from merged PRs using
 [release categories](.github/release.yml). The workflow publishes the SDK and
-Skill payload, not the ego lite browser application or its installer.
+Skill payload, not the ego tiny browser application or its installer.

@@ -42,7 +42,7 @@ export type DownloadInterception = {
   dispose(reason?: Error): Promise<void>;
 };
 
-// Chromium keeps one download behavior per BrowserContext, and every ego lite
+// Chromium keeps one download behavior per BrowserContext, and every ego tiny
 // TaskSpace shares one context, so Page.setDownloadBehavior from any Page, in
 // any ego-browser process, overrides the others: the most recent call wins
 // and "default" from one Page strips the directory from everyone. Downloads

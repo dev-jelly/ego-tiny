@@ -28,7 +28,7 @@ export function runCommand(command, args, options = {}) {
       if (error.code === "ENOENT" && options.egoBrowserSdkPath) {
         reject(
           new Error(
-            `Ego Lite CLI not found at ${command}; install/open Ego Lite or set EGO_BROWSER_REAL_E2E_CLI`,
+            `Ego Tiny CLI not found at ${command}; install/open Ego Tiny or set EGO_BROWSER_REAL_E2E_CLI`,
           ),
         );
         return;

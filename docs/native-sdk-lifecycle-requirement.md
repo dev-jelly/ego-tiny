@@ -2,7 +2,7 @@
 
 ## Disposal
 
-When Ego Lite unloads or replaces an embedded ego-browser Node context, it
+When Ego Tiny unloads or replaces an embedded ego-browser Node context, it
 should call and await the module's exported `disposeEgoSdk()` function before
 destroying that context.
 

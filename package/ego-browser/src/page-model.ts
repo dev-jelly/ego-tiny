@@ -991,7 +991,7 @@ export function createTaskSpaceHandle(
   if (!descriptor || !Number.isInteger(descriptor.id)) {
     throw new TypeError("TaskSpace requires a numeric id");
   }
-  // Ego Lite imports the SDK before it evaluates the submitted script. Resolve
+  // Ego Tiny imports the SDK before it evaluates the submitted script. Resolve
   // environment-backed settings lazily so SDK callers can configure a round
   // before their first taskSpace() call.
   defaultLedger ||= new PageLedgerStore({
@@ -1512,7 +1512,7 @@ class TaskSpace {
         });
       } catch (error) {
         // A tab without a committed label cannot be returned safely. Close it
-        // only when createTab produced a new target. Ego Lite may reuse a blank
+        // only when createTab produced a new target. Ego Tiny may reuse a blank
         // anchor tab; closing a pre-existing target on a ledger error could
         // destroy a page the runtime does not own.
         if (!existedBeforeCreate) {
@@ -2769,7 +2769,7 @@ class Page {
         throw new Error(`page ${this.label} was closed`);
       }
       if (tabs.length <= 1) {
-        // Ego Lite destroys a task space when its last tab closes, so open a
+        // Ego Tiny destroys a task space when its last tab closes, so open a
         // blank anchor first. It is SDK-owned: recording it as an agent-origin
         // unmanaged tab keeps reconcile from adopting it as a managed Page and
         // lets finish() close it instead of protecting it as a user tab.

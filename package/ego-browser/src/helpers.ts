@@ -78,7 +78,7 @@ export { uploadFile } from "./driver/files.js";
 export { browserFetch, serverFetch } from "./http.js";
 
 /**
- * List Agent-owned and user-owned spaces exposed by Ego Lite.
+ * List Agent-owned and user-owned spaces exposed by Ego Tiny.
  * Use the numeric id as the stable locator; display names may be duplicated.
  * @returns {Promise<Array<{taskId:string,id:number,name:string,createdBy?:string,ownership?:string,profileId?:string,profileName?:string,recentTabTitles?:string[]}>>}
  */
@@ -203,7 +203,7 @@ async function createTaskSpaceResolution(
     throw new Error("newTaskSpace returned an invalid task space");
   }
   taskSpaceNumericId(created, "newTaskSpace");
-  // The native create response currently omits ownership on some Ego Lite
+  // The native create response currently omits ownership on some Ego Tiny
   // builds. Creation through this Agent API is itself authoritative.
   const createdByAgent = {
     ...created,

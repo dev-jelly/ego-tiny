@@ -32,7 +32,7 @@ type GateOwnership = SpaceScope & {
 };
 
 /**
- * Serializes native operations that rely on Ego Lite's process-wide selected
+ * Serializes native operations that rely on Ego Tiny's process-wide selected
  * task space. The queue covers the entire async operation, so another caller
  * cannot change the selected space while a request is still in flight.
  */

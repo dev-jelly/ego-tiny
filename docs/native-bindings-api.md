@@ -1,10 +1,10 @@
-# Ego Lite Native Bindings API Reference
+# Ego Tiny Native Bindings API Reference
 
 This document describes the low-level `globalThis.ego` API injected into the
-`ego-browser nodejs` environment by the installed Ego Lite application.
+`ego-browser nodejs` environment by the installed Ego Tiny application.
 
-These bindings are provided by Ego Lite, not implemented by this repository.
-Their availability is determined by the installed Ego Lite build and is
+These bindings are provided by Ego Tiny, not implemented by this repository.
+Their availability is determined by the installed Ego Tiny build and is
 independent of the Git tag or branch used to build the local `ego-browser`
 runtime.
 
@@ -113,7 +113,7 @@ after pending requests settle.
 
 ### `await ego.getBrowserVersion()`
 
-Returns the installed Ego Lite version and whether its updater has an available
+Returns the installed Ego Tiny version and whether its updater has an available
 release. This method is not task-scoped and does not start an update.
 
 ```js
@@ -123,7 +123,7 @@ release. This method is not task-scoped and does not start an update.
 }
 ```
 
-Older Ego Lite builds may not expose this method. Callers should treat a missing
+Older Ego Tiny builds may not expose this method. Callers should treat a missing
 method, a failed request, or an invalid result as unavailable update status.
 
 ## Task Context
@@ -160,7 +160,7 @@ new task space inherits. Profile selection only applies when creating the task
 space. After creation, select the returned task-space `id` with
 `ego.useTaskSpace(task.id)` as usual.
 
-Profile APIs are available when the installed Ego Lite build exposes them,
+Profile APIs are available when the installed Ego Tiny build exposes them,
 even if the checked-out repository runtime does not yet provide equivalent
 higher-level helper methods.
 
@@ -371,7 +371,7 @@ maxResultLength: number
   Maximum result content length. Zero or omitted means unlimited.
 ```
 
-In Ego Lite 0.5.0.19, subtree scope requires launching the browser with
+In Ego Tiny 0.5.0.19, subtree scope requires launching the browser with
 `--enable-features=SnapshotSubtree`. Do not use `PageSnapshotSubtree`.
 This version matches `root` by `backendNodeId` across all frames, although that
 identifier is only frame-local. If the same value occurs in multiple frames,
@@ -448,7 +448,7 @@ Returns:
 
 `id` is the locator for `ego.claimTaskSpace()` and other task-space APIs.
 `name` and `taskId` are display values and may be duplicated. A regular Space
-created in the Ego Lite UI has `createdBy: 'user'` and `ownership: 'user'`.
+created in the Ego Tiny UI has `createdBy: 'user'` and `ownership: 'user'`.
 `recentTabTitles` may help the caller identify the intended Space without
 claiming it.
 

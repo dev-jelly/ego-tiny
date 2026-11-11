@@ -68,7 +68,7 @@ export function profileSelectionCase() {
     await assertRejects(
       () => taskSpace(invalidName, { profileId: missingProfileId }),
       "Profile not found",
-      "an unknown profile is reported by Ego Lite"
+      "an unknown profile is reported by Ego Tiny"
     );
     assert(
       !(await listTaskSpaces()).some((space) => space.name === invalidName),

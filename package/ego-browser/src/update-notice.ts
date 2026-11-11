@@ -28,7 +28,7 @@ export async function emitUpdateNotice(
       return;
     }
     emit(
-      `[ego-browser:notice] Ego Lite update is available ` +
+      `[ego-browser:notice] Ego Tiny update is available ` +
         `(current ${info.currentVersion.trim()}). Finish the current browser task, ` +
         "then ask the user before running `ego-browser upgrade`; re-read the " +
         "ego-browser Skill afterward.",

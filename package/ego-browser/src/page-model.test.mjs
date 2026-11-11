@@ -668,7 +668,7 @@ function createFixture(rootDir) {
         return {};
       }
       if (method === "Browser.getVersion") {
-        return { product: "Ego Lite/Test" };
+        return { product: "Ego Tiny/Test" };
       }
       if (method === "DOM.scrollIntoViewIfNeeded") {
         trapClickPoints = false;
@@ -4329,7 +4329,7 @@ test("Page pointer methods dispatch through the addressed target session", async
   });
 });
 
-test("Page mouse movement updates the Ego Lite agent cursor", async () => {
+test("Page mouse movement updates the Ego Tiny agent cursor", async () => {
   await withFixture(async (fixture) => {
     const task = taskForRound(fixture, "round-a");
     const page = await openTestPage(task, "https://example.test/first");
@@ -5277,7 +5277,7 @@ test("Page and TaskSpace CDP commands preserve their intended scope", async () =
     );
 
     assert.equal(pageResult.result.value, "https://example.test/first");
-    assert.equal(taskResult.product, "Ego Lite/Test");
+    assert.equal(taskResult.product, "Ego Tiny/Test");
     assert(
       fixture.calls.some(
         ([kind, method, , sessionId, timeout]) =>

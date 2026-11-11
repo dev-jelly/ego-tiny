@@ -1,14 +1,14 @@
-# Install or upgrade ego lite
+# Install or upgrade ego tiny
 
-Read this file only when `ego-browser` is not found, when `ego-browser skill` reports an unknown command, or when the user asks to install ego lite. For day-to-day browser work, run `ego-browser skill` and follow its output.
+Read this file only when `ego-browser` is not found, when `ego-browser skill` reports an unknown command, or when the user asks to install ego tiny. For day-to-day browser work, run `ego-browser skill` and follow its output.
 
-The ego-browser skill depends on the ego lite browser: the `ego-browser` command is provided by the ego lite app. Once ego lite is installed and you've completed onboarding, no additional setup is normally needed.
+The ego-browser skill depends on the ego tiny browser: the `ego-browser` command is provided by the ego tiny app. Once ego tiny is installed and you've completed onboarding, no additional setup is normally needed.
 
-ego lite website: https://lite.ego.app/
+ego tiny website: https://lite.ego.app/
 
-## Upgrade an older ego lite
+## Upgrade an older ego tiny
 
-If `ego-browser` exists but `ego-browser skill` reports `Unknown command: skill`, the installed ego lite is older than this skill. Ask the user for approval, then run:
+If `ego-browser` exists but `ego-browser skill` reports `Unknown command: skill`, the installed ego tiny is older than this skill. Ask the user for approval, then run:
 
 ```bash
 ego-browser upgrade

@@ -158,7 +158,7 @@ test("listTaskSpaces throws on binding error objects", async () => {
   );
 });
 
-test("profiles returns the browser profiles exposed by Ego Lite", async () => {
+test("profiles returns the browser profiles exposed by Ego Tiny", async () => {
   const expected = [
     { id: "Default", name: "Personal", isDefault: true },
     { id: "Profile 2", name: "Work", isDefault: false },
@@ -536,7 +536,7 @@ test("taskSpace rejects profile selection when resuming a numeric space id", asy
   );
 });
 
-test("taskSpace rejects empty profile ids before calling Ego Lite", async () => {
+test("taskSpace rejects empty profile ids before calling Ego Tiny", async () => {
   await withEgo(
     {
       async listTaskSpaces() {
@@ -645,7 +645,7 @@ test("newTaskSpace creates and selects an agent task space", async () => {
     {
       async createTaskSpace(name) {
         calls.push(["createTaskSpace", name]);
-        // Ego Lite's create result may omit ownership even though creation by
+        // Ego Tiny's create result may omit ownership even though creation by
         // this API always produces an Agent-owned space.
         return { taskId: name, id: 7, name };
       },

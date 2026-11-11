@@ -5,7 +5,7 @@ The ego-browser Skill has two layers:
 - **Entry Skill** — `skills/ego-browser/` in this repository. It is what skill
   markets, plugins, and `~/.agents/skills/ego-browser` contain. It only tells the
   agent to run `ego-browser skill`, plus the install guide and the
-  cookie/cache/storage guide that must be readable before ego lite exists.
+  cookie/cache/storage guide that must be readable before ego tiny exists.
 - **Usage guide** — `package/ego-browser/skill-body/SKILL.md`. It is versioned
   with the SDK and printed by `ego-browser skill`, so the agent always reads the
   guide that matches the installed browser. The build renders one guide per
@@ -13,7 +13,7 @@ The ego-browser Skill has two layers:
   `<!-- platform: windows -->` and `<!-- /platform -->` markers (or
   `platform: macos`) only reach that platform's guide.
 
-This document lists what the ego lite app and its native `ego-browser` launcher
+This document lists what the ego tiny app and its native `ego-browser` launcher
 must implement. Everything else lives in this repository.
 
 ## Release payload
@@ -77,7 +77,7 @@ Errors:
 | Neither the platform guide nor `ego-browser/SKILL.md` exists next to the resolved SDK | Print the paths that were checked to stderr, exit non-zero; do not fall back to another source |
 
 Also list `skill` in `ego-browser help`, e.g. "Print the usage guide for this
-ego lite version".
+ego tiny version".
 
 Older launchers print `Unknown command: skill` and exit 2. The entry Skill
 relies on that to send the agent to `references/install.md`, which asks the user

@@ -25,7 +25,7 @@ const OOPIF_AUTO_ATTACH_PARAMS = {
   autoAttach: true,
   waitForDebuggerOnStart: true,
   flatten: true,
-  // Ego Lite can pause an excluded related target (dedicated worker,
+  // Ego Tiny can pause an excluded related target (dedicated worker,
   // AudioWorklet, ...) without attaching it, leaving no session through which
   // the harness can resume it. Attach every type; the attach handler resumes
   // and detaches everything except iframes.
@@ -1164,7 +1164,7 @@ export function prepareFileChooser(
 }
 
 /**
- * Turn on Ego Lite's automation hooks for one renderer session. They keep the
+ * Turn on Ego Tiny's automation hooks for one renderer session. They keep the
  * session's Runtime domain from reporting console messages and capturing call
  * stacks, both of which pages can observe to detect CDP automation. The
  * browser keeps the flag across renderer swaps, so it is sent once per session
@@ -1485,7 +1485,7 @@ function recordNetworkEvent(targetId: string, target, data): void {
 // response. The callback carries no request id, so task-level failures reject
 // every pending request. User-control failures first probe the native task state:
 // the CDP callback does not carry the permission reason, while ordinary native
-// calls may do so on newer Ego Lite builds.
+// calls may do so on newer Ego Tiny builds.
 function handleSendError(message, error_code) {
   if (pending.size === 0) return;
 

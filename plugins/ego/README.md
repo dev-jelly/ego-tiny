@@ -6,7 +6,7 @@ and installation instructions for that host.
 
 ## Requirements
 
-- macOS or Windows with ego lite installed and open
+- macOS or Windows with ego tiny installed and open
 - `ego-browser` available on the agent's `PATH`
 - An agent host that can read Skills and execute local shell commands
 
@@ -341,7 +341,7 @@ EOF
 
 `skills/ego-browser` here is a copy of the canonical `skills/ego-browser` at the
 repository root, the thin entry Skill. The usage guide it points to lives in
-`package/ego-browser/skill-body/SKILL.md` and ships with ego lite. Edit only
+`package/ego-browser/skill-body/SKILL.md` and ships with ego tiny. Edit only
 the canonical Skill. When a commit stages changes under `skills/ego-browser/`,
 the commit hook refreshes the copy from the staged Skill and stages it too, so
 unstaged edits and untracked drafts never reach the copy. Without the hook,

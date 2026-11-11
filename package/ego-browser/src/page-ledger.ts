@@ -85,7 +85,7 @@ class LedgerLockedError extends Error {
 
 type LedgerFile = { seq: number; path: string };
 
-/** Stable across Agent rounds and Node-service restarts in one Ego Lite run. */
+/** Stable across Agent rounds and Node-service restarts in one Ego Tiny run. */
 export function runtimeInstanceId(parentPid = process.ppid): string {
   return `browser-host:${parentPid}`;
 }
@@ -102,7 +102,7 @@ type ReconcileOptions = {
 
 /**
  * Stores durable page labels in one JSON document per task space and browser
- * instance. Space ids restart at 1 in every Ego Lite instance, so concurrent
+ * instance. Space ids restart at 1 in every Ego Tiny instance, so concurrent
  * instances sharing the state directory must not share a file.
  *
  * Every write creates a new numbered version (`space-<id>@<instance>.<n>.json`)

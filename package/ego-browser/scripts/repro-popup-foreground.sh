@@ -2,21 +2,21 @@
 
 set -euo pipefail
 
-# Minimal macOS reproduction for Ego Lite being activated when a page-created
+# Minimal macOS reproduction for Ego Tiny being activated when a page-created
 # popup opens. This deliberately keeps the TaskSpace Agent-owned throughout.
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PACKAGE_DIR="$(cd "${SCRIPT_DIR}/.." && pwd)"
 SDK_PATH="${PACKAGE_DIR}/dist/out/index.js"
-DEFAULT_EGO_CLI="/Applications/ego lite.app/Contents/Frameworks/ego Framework.framework/Versions/Current/Helpers/ego-browser"
+DEFAULT_EGO_CLI="/Applications/ego tiny.app/Contents/Frameworks/ego Framework.framework/Versions/Current/Helpers/ego-browser"
 EGO_CLI="${EGO_BROWSER_REAL_E2E_CLI:-${DEFAULT_EGO_CLI}}"
 
 if [[ "$(uname -s)" != "Darwin" ]]; then
-  echo "This reproduction currently targets Ego Lite on macOS." >&2
+  echo "This reproduction currently targets Ego Tiny on macOS." >&2
   exit 1
 fi
 
 if [[ ! -x "${EGO_CLI}" ]]; then
-  echo "Ego Lite CLI was not found at: ${EGO_CLI}" >&2
+  echo "Ego Tiny CLI was not found at: ${EGO_CLI}" >&2
   echo "Override it with EGO_BROWSER_REAL_E2E_CLI=/path/to/ego-browser" >&2
   exit 1
 fi
@@ -31,7 +31,7 @@ fi
 
 echo
 echo "The popup will open in 5 seconds."
-echo "Keep another application in front and watch whether Ego Lite takes focus."
+echo "Keep another application in front and watch whether Ego Tiny takes focus."
 sleep 5
 
 "${EGO_CLI}" nodejs --sdk-path "${SDK_PATH}" <<'EOF'
@@ -42,7 +42,7 @@ try {
   const html = `
     <!doctype html>
     <meta charset="utf-8">
-    <title>Ego Lite popup foreground reproduction</title>
+    <title>Ego Tiny popup foreground reproduction</title>
     <button id="open-popup">Open popup</button>
   `;
 
