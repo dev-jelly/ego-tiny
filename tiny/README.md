@@ -15,7 +15,9 @@ tiny adds lives in this `tiny/` directory.
 
 `patch_app.py` points every vendor and analytics endpoint at `0.0.0.0`
 (metrics, PostHog, Sentry, sync, remote feature flags, remote app-bundle
-updates, the hosted chat panel, Langfuse) and renames the product. The updater
+updates, the hosted chat panel, Langfuse) in the executables, the bundled Node
+daemon and the compressed web UI inside `resources.pak`, and renames the
+product. The updater
 is deleted. `launcher.sh` adds DNS-level blocks for the same hosts and turns off
 Chromium's built-in DNS client so VPN split DNS behaves as it does in Safari.
 If a new ego lite release moves an endpoint, `patch_app.py` fails instead of
@@ -42,9 +44,10 @@ tiny/sync-upstream.sh --install  # merge upstream ego-lite, re-apply the rename,
 Two things update independently:
 
 - **Upstream repository** (runtime, guide, site learnings): `sync-upstream.sh`
-  merges `upstream/main`. The only edit ego tiny makes to upstream files is the
-  product rename, so conflicts are resolved in upstream's favour and
-  `rename-source.sh` is applied again.
+  merges `upstream/main`. Conflicts are resolved in upstream's favour and
+  `apply-overlay.sh` re-applies ego tiny's layer (product rename, `AGENTS.md`
+  block); the top-level `README.md` is kept. The rules are in
+  [`MAINTAINING.md`](MAINTAINING.md).
 - **Browser app**: let ego lite update itself, then run
   `build-tiny.sh --install`. ego tiny never updates in place.
 - Builds based on ego lite 0.6.2.9 or 0.6.2.10 apply the

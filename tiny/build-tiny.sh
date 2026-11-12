@@ -38,7 +38,8 @@ esac
 
 echo "==> remove updater"
 rm -rf "$V/Helpers/EgoUpdater.app" "$APP/Contents/Library" \
-	"$APP/Contents/embedded.provisionprofile" "$V/Resources/install.sh"
+	"$APP/Contents/embedded.provisionprofile" "$V/Resources/install.sh" \
+	"$V/Resources/ego-skills/ego-browser/scripts/install.sh"
 
 # The real browser binary becomes "ego tiny"; the bundle executable is a
 # launcher that execs it with the blocking flags.
@@ -86,6 +87,7 @@ rm -rf "$ICONSET" "$APP/Contents/Resources/Assets.car"
 echo "==> fork runtime"
 mkdir -p "$APP/Contents/Resources/ego-tiny-sdk"
 cp -R "$REPO/package/ego-browser/dist/out/." "$APP/Contents/Resources/ego-tiny-sdk/"
+rm -f "$APP/Contents/Resources/ego-tiny-sdk/agent-skills/ego-browser/scripts/install.sh"
 # The guide `ego-tiny skill` prints: same text, commands written as ego-tiny.
 LC_ALL=C perl -pi -e 's/(?<![\[.\/\w-])ego-browser(?![:\w\/-])/ego-tiny/g' \
 	"$APP/Contents/Resources/ego-tiny-sdk/ego-browser"/SKILL*.md

@@ -1,157 +1,107 @@
 <div align="center">
 
-<img src="docs/assets/banner.png" alt="ego tiny" width="100%" />
+<img src="tiny/icon/jelly-1024.png" alt="ego tiny" width="160" />
 
-**The fastest browser for AI agents to run web automation**
+# ego tiny
 
-<a href="https://trendshift.io/repositories/42334?utm_source=repository-badge&amp;utm_medium=badge&amp;utm_campaign=badge-repository-42334" target="_blank" rel="noopener noreferrer"><img src="https://trendshift.io/api/badge/repositories/42334" alt="citrolabs%2Fego-lite | Trendshift" width="250" height="55"/></a>
-
-<p>
-  <a href="https://cdn.ego.app/setup/macos/arm64/egolite-Y7MbxKIuhzFB.dmg"><img src="https://img.shields.io/badge/Download-Apple%20Silicon-000000?style=for-the-badge&logo=apple&logoColor=white" alt="Download for Apple Silicon" /></a>
-  <a href="https://cdn.ego.app/setup/macos/x64/egolite-Y7MbxKIuhzFB.dmg"><img src="https://img.shields.io/badge/Download-Intel-000000?style=for-the-badge&logo=apple&logoColor=white" alt="Download for Intel" /></a>
-  <a href="https://cdn.ego.app/setup/windows/x64/egoliteSetup-Y7MbxKIuhzFB.exe"><img src="https://img.shields.io/badge/Download-Windows-000000?style=for-the-badge&logo=data:image/svg%2Bxml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI%2BPHBhdGggZmlsbD0iI2ZmZiIgZD0iTTAgMGgxMS4zNzd2MTEuMzcySDB6bTEyLjYyMyAwSDI0djExLjM3MkgxMi42MjN6TTAgMTIuNjIzaDExLjM3N1YyNEgwem0xMi42MjMgMEgyNFYyNEgxMi42MjN6Ii8%2BPC9zdmc%2B" alt="Download for Windows" /></a>
-  <a href="https://discord.gg/5eGZVvHbTq"><img src="https://img.shields.io/badge/Discord-Join-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Discord" /></a>
-  <a href="https://x.com/ego_agent"><img src="https://img.shields.io/badge/Follow-%40ego__agent-000000?style=for-the-badge&logo=x&logoColor=white" alt="Follow @ego_agent on X" /></a>
-  <a href="https://lite.ego.app/document/"><img src="https://img.shields.io/badge/Docs-lite.ego.app-1E90FF?style=for-the-badge&logo=gitbook&logoColor=white" alt="Docs" /></a>
-  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-3DA639?style=for-the-badge" alt="License MIT" /></a>
-</p>
-
-<p>
-  <b>English</b> ·
-  <a href="README.zh-CN.md">简体中文</a> ·
-  <a href="README.ja.md">日本語</a> ·
-  <a href="README.ko.md">한국어</a> ·
-  <a href="README.pt.md">Português</a> ·
-  <a href="README.es.md">Español</a> ·
-  <a href="README.fr.md">Français</a> ·
-  <a href="README.it.md">Italiano</a> ·
-  <a href="README.ru.md">Русский</a>
-</p>
+**ego lite를 포크해서 다시 만든, 제작사 서버로 아무것도 보내지 않는 브라우저**
 
 </div>
 
-ego (tiny) is a browser where you and your AI agents work in parallel. Your agents run their browser tasks in their own Spaces, isolated workspaces inside the same browser, while you keep browsing in yours, so no agent ever takes the browser away from you. And the automation itself finishes faster, on fewer tokens.
+## 이 프로젝트는 무엇인가
 
-Existing tools like browser-use and agent-browser are a bridge to the browser, not a browser of their own: they need a separate one to drive, your browser data rarely carries over intact, the connection is unstable, and you and the agent end up fighting over control of the browser. ego tiny is one browser designed from the start for the two of you to share. No extra setup, and the agent can always reach your real logins and tabs through `ego-browser`.
+ego tiny는 [dev-jelly](https://github.com/dev-jelly)가 **ego lite를 포크해 다시 빌드한 개인용 브라우저**입니다.
+AI 에이전트가 브라우저를 조작하는 기능은 그대로 두고, 제작사와 분석 서비스로 나가는 전송을 모두 끊었습니다.
+ego lite와 같은 컴퓨터에 나란히 설치해서 쓸 수 있습니다.
 
-## Demo
+Citro Labs의 공식 제품이 아니며, Citro Labs와 관련이 없습니다.
 
-https://github.com/user-attachments/assets/ffe7954b-58ee-411e-b35d-ec30c58a08bc
+## 원본
 
-## Quick Start
+| | 원본 | 이 프로젝트 |
+| --- | --- | --- |
+| 이름 | ego lite | ego tiny |
+| 만든 곳 | Citro Labs | dev-jelly (개인 포크) |
+| 저장소 | [citrolabs/ego-lite](https://github.com/citrolabs/ego-lite) | [dev-jelly/ego-tiny](https://github.com/dev-jelly/ego-tiny) |
+| 라이선스 | MIT (저장소의 런타임·스킬) | 동일 |
 
-ego tiny runs on macOS and Windows, and Linux is on the [roadmap](https://lite.ego.app/roadmap).
+원본은 두 부분으로 이루어져 있고, ego tiny는 각각을 다르게 다룹니다.
 
-### 1. Install
+- **공개된 부분** — 이 저장소의 `package/ego-browser`(에이전트용 런타임)와 `skills/`. 소스에서 직접 빌드합니다.
+- **비공개 부분** — ego lite 앱 자체(Chromium 기반 브라우저). 소스가 없으므로 **설치된 ego lite 앱을 복사해 바이너리를 패치하고 다시 서명**합니다. 이 저장소에는 앱 바이너리가 들어 있지 않고, 패치 스크립트만 들어 있습니다.
 
-Pick whichever fits your flow.
+원본의 사용 설명은 [citrolabs/ego-lite의 README](https://github.com/citrolabs/ego-lite#readme)에 있습니다.
+이 저장소의 `README.*.md`(번역본)와 `docs/`는 원본 문서를 이름만 바꿔 둔 것입니다.
 
-**1.1 Download the app**
+## 무엇이 바뀌었나
 
-<a href="https://cdn.ego.app/setup/macos/arm64/egolite-Y7MbxKIuhzFB.dmg"><img src="https://img.shields.io/badge/⬇%20Apple%20Silicon-.dmg-000000?style=for-the-badge&logo=apple&logoColor=white" alt="Download ego tiny for Apple Silicon" /></a>
-<a href="https://cdn.ego.app/setup/macos/x64/egolite-Y7MbxKIuhzFB.dmg"><img src="https://img.shields.io/badge/⬇%20Intel-.dmg-000000?style=for-the-badge&logo=apple&logoColor=white" alt="Download ego tiny for Intel" /></a>
-<a href="https://cdn.ego.app/setup/windows/x64/egoliteSetup-Y7MbxKIuhzFB.exe"><img src="https://img.shields.io/badge/⬇%20Windows-.exe-000000?style=for-the-badge&logo=data:image/svg%2Bxml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI%2BPHBhdGggZmlsbD0iI2ZmZiIgZD0iTTAgMGgxMS4zNzd2MTEuMzcySDB6bTEyLjYyMyAwSDI0djExLjM3MkgxMi42MjN6TTAgMTIuNjIzaDExLjM3N1YyNEgwem0xMi42MjMgMEgyNFYyNEgxMi42MjN6Ii8%2BPC9zdmc%2B" alt="Download ego tiny for Windows" /></a>
+ego tiny가 추가한 것은 전부 [`tiny/`](tiny/) 디렉터리에 있습니다. 원본 파일에 가한 변경은 제품 이름 치환과 이 README, `AGENTS.md` 맨 위의 안내 블록뿐입니다.
 
-Click to download, then open it to install. Either way, ego tiny adds the `ego-browser` skill to every agent's skills directory on your machine.
+### 1. 제작사·분석 서버 전송 차단
 
-**1.2 Add the skill with npx**
+| 대상 | 원본에서 하던 일 | ego tiny |
+| --- | --- | --- |
+| `eventflow.citrolabs.ai` | 사용 통계(UMA/UKM) 업로드 | 차단 |
+| PostHog | 제품 분석 이벤트 | 차단 |
+| Sentry | 오류·크래시 리포트 | 차단 |
+| Langfuse | 에이전트 대화 트레이스 | 차단 |
+| `sync.citrolabs.ai` | 동기화 | 차단 |
+| `variations.ego.app` | 원격 기능 플래그 | 차단 |
+| `cdn.citrolabs.ai/app-bundle` | 원격 코드 업데이트 | 차단 |
+| `update.citrolabs.ai` | 자동 업데이트 | 업데이터 자체를 제거 |
+| `app`·`api`·`agent`·`task`·`speech`·`files.citrolabs.ai` | 호스팅형 채팅 패널, 음성 | 차단 |
 
-Install just the `ego-browser` skill:
+차단은 두 겹입니다.
+
+1. **바이너리·리소스 패치** (`tiny/patch_app.py`) — 앱 실행 파일, 번들된 Node 데몬, 압축된 웹 UI(`resources.pak`) 안의 주소를 `0.0.0.0`으로 바꿉니다.
+2. **실행 플래그** (`tiny/launcher.sh`) — 같은 도메인들을 DNS 단계에서 한 번 더 막고, 백그라운드 통신·크래시 업로드·컴포넌트 업데이트를 끕니다.
+
+ego lite 새 버전에서 주소가 옮겨지거나 바뀌면 빌드가 실패하도록 되어 있어, 전송이 살아 있는 빌드가 조용히 만들어지지 않습니다.
+
+### 2. 이름과 아이콘
+
+- 앱과 문서의 `ego lite` / `ego (lite)` → `ego tiny` / `ego (tiny)`
+- 아이콘을 분홍 젤리로 교체
+- 번들 ID `com.citrolabs.ego.lite` → `com.citrolabs.ego.tiny`
+
+### 3. ego lite와 공존
+
+| | ego lite | ego tiny |
+| --- | --- | --- |
+| 앱 | `/Applications/ego lite.app` | `/Applications/ego tiny.app` |
+| 프로필 | `~/Library/Application Support/Citro Labs/ego lite` | `…/Citro Labs/ego tiny` |
+| CLI | `ego-browser` | `ego-tiny` |
+| 에이전트 스킬 | `ego-browser` | `ego-tiny` |
+| 런타임 상태 | `~/.ego-browser` | `~/.ego-tiny` |
+
+### 4. 그 밖의 변경
+
+- **보안 패치** — ego lite 0.6.2.9 / 0.6.2.10 기반 빌드에는 Chromium M156의 libxslt 수정(CVE-2026-125350)을 백포트합니다 (`tiny/patch-chromium-xslt.py`).
+- **VPN 분할 DNS** — Chromium 내장 DNS 클라이언트를 꺼서, Tailscale 같은 VPN의 도메인별 DNS가 Safari와 똑같이 동작합니다.
+- **자동 업데이트 없음** — 아래 명령으로 다시 빌드합니다.
+
+## 빌드와 설치
+
+macOS(Apple Silicon)에서, ego lite가 `/Applications`에 설치되어 있어야 합니다. Node 22 이상과 `brotli`(`brew install brotli`)가 필요합니다.
 
 ```bash
-npx skills add citrolabs/ego-lite
+tiny/build-tiny.sh --install
 ```
 
-The first time your agent runs a browser task, it walks you through installing the ego tiny app.
+`/Applications/ego tiny.app`, `~/.local/bin/ego-tiny`, `ego-tiny` 스킬이 설치됩니다. ego tiny가 실행 중이면 먼저 종료해야 합니다.
 
-**1.3 Let your agent set it up**
+## 원본 업데이트 반영
 
-Paste this into your agent:
-
-```
-Set up ego tiny for me: https://github.com/citrolabs/ego-lite
-
-Read `skills/ego-browser/references/install.md` and follow the steps to install ego tiny.
+```bash
+tiny/sync-upstream.sh --install
 ```
 
-On first launch, ego tiny asks one question, whether to migrate your Chrome data. Say yes and your agent inherits your existing logins, cookies, extensions, and bookmarks.
+원본 저장소를 병합하고, ego tiny의 변경을 다시 입힌 뒤, 테스트하고 재빌드합니다.
+절차와 원칙은 [`tiny/MAINTAINING.md`](tiny/MAINTAINING.md)에 있습니다.
 
-### 2. Try your first task
+## 알아둘 점
 
-In your agent CLI, type `/ego-browser` followed by a space, then describe what you want in plain language:
-
-```
-ego-browser follow @ego_agent on x.com for me
-```
-
-The agent picks up the `ego-browser` skill, opens the page in its own Space, reads a Snapshot (the page turned into structured text), acts on the page, and reports back, all while your own tabs stay untouched.
-
-Your browsing data, cookies, and everything else the browser holds stay on your device. ego tiny keeps its data collection deliberately narrow: simple product signals, like whether you've set ego tiny as your default browser.
-
-## Highlights of ego tiny
-
-| Feature | What it does |
-|---|---|
-| **Code-based, not CLI-based: faster runs on fewer tokens for complex tasks** | The capabilities ego tiny exposes to the agent are wrapped as JavaScript functions the agent calls directly. The agent gets to do what it does best: write code, composing a multi-step task into a single output instead of getting stuck in a "call two commands, look at the result, call two more commands" loop. Compared to the conventional CLI approach, complex workflows finish far faster, with higher task success rates, far fewer tool calls per task, and a much lower cost per task. |
-| **A dedicated Space for every agent** | ego tiny gives each agent its own fully isolated Space. You browse up front, your agent works in the background, and they don't get in each other's way. You can see which Space has an agent running at any moment, and take it over or stop it whenever you want. |
-| **Your agents multitask in Spaces, parallel workspaces inside the same browser** | Each Space gets its own AI agent or its own task, all running at the same time. Claude Code enriching 10 leads in 10 parallel Spaces. Codex scraping 5 competitor sites in 5 more. They don't collide or steal your tabs. Your mouse stays where you left it. |
-| **The strongest page Snapshot on the market** | Thanks to customization inside the browser engine, ego tiny produces the highest-quality page snapshots, the view text-only models rely on to "see" and act on a webpage. It reliably handles tough cases like deeply nested iframes, exactly where other approaches consistently break down. |
-| **Any agent can drive it through `ego-browser`** | `ego-browser` is the connection layer between any agent CLI (Claude Code, Codex, Cursor, or a custom one) and ego tiny. It exposes the browser as a set of in-page JavaScript tools: snapshot, fill, click, wait, navigate, capture. The agent writes a JavaScript snippet calling those tools, and `ego-browser` runs it on the page in one pass. |
-| **Experience accumulation that makes your agent faster the more you use it** *(coming soon)* | Most of an agent's time on browser tasks goes to trial and error. ego tiny's official Skill distills every successful action into reusable tools and workflows, so similar tasks down the line run up to 5x faster. |
-
-## ego tiny vs existing products
-
-Most tools can automate a browser. The real questions are what browser the agent gets, whether you can keep working at the same time, and whether the tool is built for the agent you already use or a built-in one.
-
-| Feature | ego tiny | Browser extensions<br><sub>Claude/Codex in Chrome</sub> | Built-in browsers<br><sub>Claude/ChatGPT built-in browser</sub> | Cloud browsers<br><sub>Browserbase/Browser Use</sub> | Browser CLIs<br><sub>playwright-cli/Browser Harness</sub> | AI browsers<br><sub>Comet/Dia</sub> |
-|---|:---:|:---:|:---:|:---:|:---:|:---:|
-| Works with any AI agent | ✓ | — | — | ✓ | ✓ | — |
-| Uses your browser logins | ✓ | ✓ | — | — | — | ✓ |
-| Fewer CAPTCHAs | ✓ | ✓ | — | — | — | ✓ |
-| Works across your whole computer | ✓ | — | ✓ | — | ✓ | — |
-| Doesn't hijack your browser | ✓ | — | ✓ | ✓ | — | — |
-| Parallel multitasking | ✓ | — | — | ✓ | — | — |
-| Runs large scraping jobs | ✓ | — | — | ✓ | ✓ | — |
-| Works as your daily browser | ✓ | ✓ | — | — | — | ✓ |
-| Free | ✓ | — | — | — | ✓ | — |
-| Data stored locally | ✓ | ✓ | ✓ | — | ✓ | — |
-| Reusable skills (coming soon) | ✓ | — | — | — | — | — |
-
-## Benchmarks
-
-Faster runs, higher success rates, fewer tokens. We ran ego-browser and four other browser tools for AI agents on Real-World Bench: 31 complex browser automation tasks on live websites. ego-browser leads on speed, success rate, and cost, and gets your agent through complex web tasks 47% to 63% faster than the other tools.
-
-<div align="center">
-
-<img src="docs/assets/real-world-bench.jpg" alt="Real-World Bench, 31 tasks: ego-browser vs Browser Harness, playwright-cli, chrome-devtools-cli and agent-browser on turns, rubric average, perfect rate, trajectory efficiency, average duration and average cost" width="100%" />
-
-</div>
-
-Every tool ran the same 31 tasks, driven by the same agent (pi) with the same model (gpt-5.6-sol, thinking effort max) and graded by the same judge against per-task rubrics. A task counts as a full success only when every requirement is met.
-
-## Docs
-
-Tutorials, the full tool reference, and integration guides live at [lite.ego.app/document/](https://lite.ego.app/document/).
-
-## Community
-
-- [Discord](https://discord.gg/5eGZVvHbTq), questions, setup help, and skill sharing
-- [GitHub Discussions](https://github.com/citrolabs/ego-lite/discussions), ideas and longer threads
-- [X/Twitter](https://x.com/ego_agent), updates and releases
-
-## Star History
-
-<a href="https://github.com/citrolabs/ego-lite/stargazers">
-<!-- star-history:start -->
-<!-- Generated daily by .github/workflows/star-history.yml and published to the
-     'star-history' branch, because main's ruleset will not take a bot commit. -->
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/citrolabs/ego-lite/star-history/star-history-dark.svg">
-  <img alt="Star history" src="https://raw.githubusercontent.com/citrolabs/ego-lite/star-history/star-history-light.svg">
-</picture>
-<!-- star-history:end -->
-</a>
-
-## License
-
-The contents of this repository are released under the [MIT License](LICENSE). The ego tiny browser is a separate, free download.
+- 임의 서명(ad hoc)이라 패스키와 Widevine DRM(넷플릭스 등)은 동작하지 않을 수 있고, macOS가 로컬 네트워크 등의 권한을 다시 묻습니다.
+- 사이드 패널의 AI 채팅은 제작사 서버에서 제공되는 기능이라 동작하지 않습니다.
+- 구글로 가는 표준 Chromium 통신은 줄였지만 완전히 없애지는 않았습니다.
+- ego lite 자체는 그대로이므로, ego lite를 쓰는 동안에는 원래대로 전송됩니다.

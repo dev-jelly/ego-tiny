@@ -7,7 +7,12 @@ Binary patches are same-length byte replacements, so no offsets move.
 Each endpoint must be found at least once; the script fails loudly if a new
 ego lite release moved or renamed one, instead of silently leaving it live.
 """
+import gzip
 import pathlib
+import re
+import shutil
+import struct
+import subprocess
 import sys
 
 # Same-length replacement: keep the scheme, point the host at 0.0.0.0 (which
@@ -96,6 +101,65 @@ def rename_everywhere(app: pathlib.Path) -> None:
     print(f"renamed {total} product-name strings")
 
 
+# Hosts inside the compressed web UI of resources.pak (chat panel, settings,
+# onboarding). Entries are gzip or brotli, so a byte replace on the file cannot
+# reach them: each affected entry is unpacked, rewritten and the pak rebuilt.
+PAK_HOSTS = re.compile(
+    rb"(?:[a-z0-9-]+\.)*citrolabs\.(?:ai|dev)"
+    rb"|[a-z0-9]+\.ingest\.(?:us\.)?sentry\.io"
+    rb"|(?:us|eu|app)(?:\.i)?\.posthog\.com"
+    rb"|(?:us\.)?cloud\.langfuse\.com"
+)
+BROTLI_MAGIC = b"\x1e\x9b"
+
+
+def patch_pak(path: pathlib.Path) -> None:
+    brotli = shutil.which("brotli")
+    if not brotli:
+        raise SystemExit("brotli CLI not found (brew install brotli); needed to patch resources.pak")
+    data = path.read_bytes()
+    version, _enc, count, aliases = struct.unpack_from("<IBxxxHH", data, 0)
+    if version != 5:
+        raise SystemExit(f"unexpected resources.pak version {version}")
+    table = [struct.unpack_from("<HI", data, 12 + i * 6) for i in range(count + 1)]
+    alias_bytes = data[12 + (count + 1) * 6 : 12 + (count + 1) * 6 + aliases * 4]
+    blobs, patched, hits = [], 0, 0
+    for i in range(count):
+        blob = data[table[i][1] : table[i + 1][1]]
+        if blob[:2] == b"\x1f\x8b":
+            text, kind = gzip.decompress(blob), "gzip"
+        elif blob[:2] == BROTLI_MAGIC:
+            text = subprocess.run([brotli, "-d", "-c"], input=blob[8:], capture_output=True, check=True).stdout
+            kind = "brotli"
+        else:
+            text, kind = blob, "raw"
+        new, n = PAK_HOSTS.subn(b"0.0.0.0", text)
+        if n:
+            hits += n
+            patched += 1
+            if kind == "gzip":
+                blob = gzip.compress(new, mtime=0)
+            elif kind == "brotli":
+                body = subprocess.run([brotli, "-c", "-q", "9"], input=new, capture_output=True, check=True).stdout
+                blob = BROTLI_MAGIC + len(new).to_bytes(6, "little") + body
+            else:
+                blob = new
+        blobs.append(blob)
+    offset = 12 + (count + 1) * 6 + len(alias_bytes)
+    out = bytearray(data[:12])
+    for (rid, _), blob in zip(table, blobs):
+        out += struct.pack("<HI", rid, offset)
+        offset += len(blob)
+    out += struct.pack("<HI", table[count][0], offset)
+    out += alias_bytes
+    for blob in blobs:
+        out += blob
+    path.write_bytes(bytes(out))
+    print(f"resources.pak: {hits} vendor hosts neutralised in {patched} web UI entries")
+    if not hits:
+        raise SystemExit("no vendor hosts found in resources.pak (format changed; re-audit)")
+
+
 def main() -> None:
     app = pathlib.Path(sys.argv[1])
     versions = app / "Contents/Frameworks/ego Framework.framework/Versions"
@@ -126,6 +190,7 @@ def main() -> None:
             "endpoints not found (ego lite changed; re-audit before trusting this build):\n  "
             + "\n  ".join(m.decode() for m in sorted(missing))
         )
+    patch_pak(version_dir / "Resources/resources.pak")
     print("all known endpoints neutralised")
     rename_everywhere(app)
 
