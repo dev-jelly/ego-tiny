@@ -30,6 +30,12 @@ for v in "$FW/Versions"/*; do
 done
 V="$FW/Versions/$CUR"
 
+case "$CUR" in
+	0.6.2.9|0.6.2.10)
+		python3 -I "$REPO/tiny/patch-chromium-xslt.py" "$V/ego Framework"
+		;;
+esac
+
 echo "==> remove updater"
 rm -rf "$V/Helpers/EgoUpdater.app" "$APP/Contents/Library" \
 	"$APP/Contents/embedded.provisionprofile" "$V/Resources/install.sh"

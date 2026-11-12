@@ -47,6 +47,10 @@ Two things update independently:
   `rename-source.sh` is applied again.
 - **Browser app**: let ego lite update itself, then run
   `build-tiny.sh --install`. ego tiny never updates in place.
+- Builds based on ego lite 0.6.2.9 or 0.6.2.10 apply the
+  [Chromium M156 libxslt fix](https://chromium.googlesource.com/chromium/src/+/refs/tags/156.0.8078.96)
+  for CVE-2026-125350 to the verified ARM64 routine before signing. The
+  backport keeps the base Chromium version and covers that CVE only.
 
 ## Known limits
 
