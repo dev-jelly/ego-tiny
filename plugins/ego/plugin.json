@@ -4,11 +4,11 @@
   "version": "2.2.0",
   "description": "Browser automation with the ego-browser Skill",
   "author": {
-    "name": "citrolabs",
-    "email": "contact@citrolabs.ai"
+    "name": "dev-jelly",
+    "email": "57338457+dev-jelly@users.noreply.github.com"
   },
-  "homepage": "https://github.com/citrolabs/ego-lite",
-  "repository": "https://github.com/citrolabs/ego-lite",
+  "homepage": "https://github.com/dev-jelly/ego-tiny",
+  "repository": "https://github.com/dev-jelly/ego-tiny",
   "license": "MIT",
   "keywords": ["browser", "automation", "skill", "playwright"]
 }

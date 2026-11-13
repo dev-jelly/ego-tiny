@@ -105,7 +105,7 @@ installation uses a plugin marketplace. The repository marketplace exposes
 `ego@ego-agent-skills` at the version on its default branch:
 
 ```bash
-claude plugin marketplace add citrolabs/ego-lite
+claude plugin marketplace add dev-jelly/ego-tiny
 claude plugin install ego@ego-agent-skills
 ```
 
@@ -131,7 +131,7 @@ The repository is a Codex marketplace too, at the version on its default
 branch:
 
 ```bash
-codex plugin marketplace add citrolabs/ego-lite
+codex plugin marketplace add dev-jelly/ego-tiny
 codex plugin add ego@ego-agent-skills
 ```
 
@@ -215,7 +215,7 @@ marketplace runs the plugin from that directory, so keep it in place. The
 bundled CodeBuddy CLI also accepts the ZIP path itself as a marketplace and
 copies the plugin into its cache.
 
-The repository is a marketplace too: add `citrolabs/ego-lite` and install
+The repository is a marketplace too: add `dev-jelly/ego-tiny` and install
 `ego@ego-agent-skills`, which tracks the version on its default branch.
 
 See the [CodeBuddy plugin marketplace guide](https://www.codebuddy.cn/docs/cli/plugin-marketplaces).

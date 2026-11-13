@@ -35,7 +35,7 @@ Citro Labs의 공식 제품이 아니며, Citro Labs와 관련이 없습니다.
 
 ## 무엇이 바뀌었나
 
-ego tiny가 추가한 것은 전부 [`tiny/`](tiny/) 디렉터리에 있습니다. 원본 파일에 가한 변경은 제품 이름 치환과 이 README, `AGENTS.md` 맨 위의 안내 블록뿐입니다.
+ego tiny가 추가한 것은 전부 [`tiny/`](tiny/) 디렉터리에 있습니다. 원본 파일에 가한 변경은 제품 이름 치환, octol.ing 링크 치환, 이 README, `AGENTS.md` 맨 위의 안내 블록뿐입니다.
 
 ### 1. 제작사·분석 서버 전송 차단
 
@@ -74,7 +74,20 @@ ego lite 새 버전에서 주소가 옮겨지거나 바뀌면 빌드가 실패�
 | 에이전트 스킬 | `ego-browser` | `ego-tiny` |
 | 런타임 상태 | `~/.ego-browser` | `~/.ego-tiny` |
 
-### 4. 그 밖의 변경
+### 4. 프로젝트 링크와 설치 파일은 octol.ing
+
+원본에서 Citro Labs를 가리키던 프로젝트 정보와 설치 파일 주소를 ego tiny 쪽으로 바꿨습니다. 값은 [`tiny/links.env`](tiny/links.env) 한 곳에서 관리합니다.
+
+| | 원본 | ego tiny |
+| --- | --- | --- |
+| 웹사이트·문서·개인정보·약관 | `lite.ego.app` | `ego.octol.ing` |
+| 설치 파일 | `cdn.ego.app/setup/…` | `ego.octol.ing/download/ego-tiny-arm64.dmg` |
+| 저장소·이슈·마켓플레이스 | `citrolabs/ego-lite` | `dev-jelly/ego-tiny` |
+| 플러그인 작성자·식별자 | `citrolabs`, `@citrolabs/ego` | `dev-jelly`, `@dev-jelly/ego-tiny` |
+
+앱의 웹 UI 안의 링크도 `ego.octol.ing`으로 바뀝니다. 원본 출처를 밝히는 곳(이 README의 "원본" 절 등)과 원본 병합용 리모트는 그대로 `citrolabs/ego-lite`입니다.
+
+### 5. 그 밖의 변경
 
 - **보안 패치** — ego lite 0.6.2.9 / 0.6.2.10 기반 빌드에는 Chromium M156의 libxslt 수정(CVE-2026-125350)을 백포트합니다 (`tiny/patch-chromium-xslt.py`).
 - **VPN 분할 DNS** — Chromium 내장 DNS 클라이언트를 꺼서, Tailscale 같은 VPN의 도메인별 DNS가 Safari와 똑같이 동작합니다.
@@ -89,6 +102,14 @@ tiny/build-tiny.sh --install
 ```
 
 `/Applications/ego tiny.app`, `~/.local/bin/ego-tiny`, `ego-tiny` 스킬이 설치됩니다. ego tiny가 실행 중이면 먼저 종료해야 합니다.
+
+설치 파일(DMG)이 필요하면 빌드 후 아래를 실행합니다. `build/ego-tiny-arm64.dmg`가 만들어지고, `tiny/links.env`의 다운로드 주소에 올리면 설치 스크립트가 그 파일을 받습니다.
+
+```bash
+tiny/package-dmg.sh
+```
+
+DMG에는 Citro Labs의 비공개 앱을 패치한 복사본이 들어 있습니다. 본인 기기용으로만 쓰고 공개 배포하지 마세요.
 
 ## 원본 업데이트 반영
 
@@ -105,3 +126,5 @@ tiny/sync-upstream.sh --install
 - 사이드 패널의 AI 채팅은 제작사 서버에서 제공되는 기능이라 동작하지 않습니다.
 - 구글로 가는 표준 Chromium 통신은 줄였지만 완전히 없애지는 않았습니다.
 - ego lite 자체는 그대로이므로, ego lite를 쓰는 동안에는 원래대로 전송됩니다.
+- `ego.octol.ing`에는 아직 사이트와 설치 파일이 올라가 있지 않습니다. 링크가 그 주소를 가리킬 뿐입니다.
+- 이 저장소를 플러그인 마켓플레이스로 추가하면 들어오는 스킬은 원본 구조 그대로 `ego-browser`라서 ego lite를 조작합니다. ego tiny용 스킬은 빌드가 설치하는 `ego-tiny`입니다.

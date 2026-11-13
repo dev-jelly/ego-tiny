@@ -1,5 +1,5 @@
 {
-  "name": "@citrolabs/ego",
+  "name": "@dev-jelly/ego-tiny",
   "version": "2.2.0",
   "description": "Portable ego-browser Skill for AI agent hosts",
   "type": "module",
@@ -44,10 +44,10 @@
     "automation",
     "skill"
   ],
-  "author": "citrolabs",
+  "author": "dev-jelly",
   "license": "MIT",
-  "homepage": "https://github.com/citrolabs/ego-lite",
-  "repository": "https://github.com/citrolabs/ego-lite",
+  "homepage": "https://github.com/dev-jelly/ego-tiny",
+  "repository": "https://github.com/dev-jelly/ego-tiny",
   "publishConfig": {
     "access": "public"
   }

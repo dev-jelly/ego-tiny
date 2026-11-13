@@ -113,6 +113,19 @@ PAK_HOSTS = re.compile(
 BROTLI_MAGIC = b"\x1e\x9b"
 
 
+def ego_tiny_site() -> bytes:
+    env = pathlib.Path(__file__).with_name("links.env").read_text()
+    match = re.search(r"^EGO_TINY_SITE=(\S+)", env, re.M)
+    if not match:
+        raise SystemExit("EGO_TINY_SITE missing from tiny/links.env")
+    return match.group(1).encode()
+
+
+# Website links in the web UI (privacy, terms, docs, use cases) go to the
+# ego tiny site instead of lite.ego.app; paths are kept.
+PAK_SITE = re.compile(rb"https?://lite\.ego\.app")
+
+
 def patch_pak(path: pathlib.Path) -> None:
     brotli = shutil.which("brotli")
     if not brotli:
@@ -134,6 +147,8 @@ def patch_pak(path: pathlib.Path) -> None:
         else:
             text, kind = blob, "raw"
         new, n = PAK_HOSTS.subn(b"0.0.0.0", text)
+        new, links = PAK_SITE.subn(ego_tiny_site(), new)
+        n += links
         if n:
             hits += n
             patched += 1

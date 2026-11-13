@@ -249,7 +249,7 @@ test("Codex listing metadata satisfies the plugin directory", () => {
 test("OpenCode adapter registers only the packaged Skill", async () => {
   const pkgSource = read(`${pluginRoot}/package.json`);
   const pkg = JSON.parse(pkgSource);
-  assert.equal(pkg.name, "@citrolabs/ego");
+  assert.equal(pkg.name, "@dev-jelly/ego-tiny");
   assert.equal(pkg.version, skillVersion);
   assert.equal(pkg.exports["."], "./index.js");
   assert.equal(pkg.exports["./server"], "./index.js");
@@ -376,7 +376,7 @@ test("DeepSeek Harness adapter registers only the packaged Skill", () => {
   assert.ok(pkg.files.includes("cordis.patch.yml"));
   assert.ok(pkg.files.includes("dsh"));
   assert.ok(pkg.files.every((path) => !/^mcp(?:\/|$)/i.test(path)));
-  assert.match(patch, /name:\s*['"]?@citrolabs\/ego\/dsh['"]?/);
+  assert.match(patch, /name:\s*['"]?@dev-jelly\/ego-tiny\/dsh['"]?/);
   assert.match(adapter, /ctx\.skills\.registerProvider/);
   assert.doesNotMatch(
     adapter,

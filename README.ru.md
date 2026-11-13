@@ -4,15 +4,14 @@
 
 **Самый быстрый браузер для ИИ-агентов, которые автоматизируют веб**
 
-<a href="https://trendshift.io/repositories/42334?utm_source=repository-badge&amp;utm_medium=badge&amp;utm_campaign=badge-repository-42334" target="_blank" rel="noopener noreferrer"><img src="https://trendshift.io/api/badge/repositories/42334" alt="citrolabs%2Fego-lite | Trendshift" width="250" height="55"/></a>
 
 <p>
-  <a href="https://cdn.ego.app/setup/macos/arm64/egolite-Y7MbxKIuhzFB.dmg"><img src="https://img.shields.io/badge/Download-Apple%20Silicon-000000?style=for-the-badge&logo=apple&logoColor=white" alt="Download for Apple Silicon" /></a>
-  <a href="https://cdn.ego.app/setup/macos/x64/egolite-Y7MbxKIuhzFB.dmg"><img src="https://img.shields.io/badge/Download-Intel-000000?style=for-the-badge&logo=apple&logoColor=white" alt="Download for Intel" /></a>
-  <a href="https://cdn.ego.app/setup/windows/x64/egoliteSetup-Y7MbxKIuhzFB.exe"><img src="https://img.shields.io/badge/Download-Windows-000000?style=for-the-badge&logo=data:image/svg%2Bxml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI%2BPHBhdGggZmlsbD0iI2ZmZiIgZD0iTTAgMGgxMS4zNzd2MTEuMzcySDB6bTEyLjYyMyAwSDI0djExLjM3MkgxMi42MjN6TTAgMTIuNjIzaDExLjM3N1YyNEgwem0xMi42MjMgMEgyNFYyNEgxMi42MjN6Ii8%2BPC9zdmc%2B" alt="Download for Windows" /></a>
+  <a href="https://ego.octol.ing/download/ego-tiny-arm64.dmg"><img src="https://img.shields.io/badge/Download-Apple%20Silicon-000000?style=for-the-badge&logo=apple&logoColor=white" alt="Download for Apple Silicon" /></a>
+  <a href="https://ego.octol.ing/download/ego-tiny-arm64.dmg"><img src="https://img.shields.io/badge/Download-Intel-000000?style=for-the-badge&logo=apple&logoColor=white" alt="Download for Intel" /></a>
+  <a href="https://ego.octol.ing/"><img src="https://img.shields.io/badge/Download-Windows-000000?style=for-the-badge&logo=data:image/svg%2Bxml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI%2BPHBhdGggZmlsbD0iI2ZmZiIgZD0iTTAgMGgxMS4zNzd2MTEuMzcySDB6bTEyLjYyMyAwSDI0djExLjM3MkgxMi42MjN6TTAgMTIuNjIzaDExLjM3N1YyNEgwem0xMi42MjMgMEgyNFYyNEgxMi42MjN6Ii8%2BPC9zdmc%2B" alt="Download for Windows" /></a>
   <a href="https://discord.gg/5eGZVvHbTq"><img src="https://img.shields.io/badge/Discord-Join-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Discord" /></a>
   <a href="https://x.com/ego_agent"><img src="https://img.shields.io/badge/Follow-%40ego__agent-000000?style=for-the-badge&logo=x&logoColor=white" alt="Follow @ego_agent on X" /></a>
-  <a href="https://lite.ego.app/document/"><img src="https://img.shields.io/badge/Docs-lite.ego.app-1E90FF?style=for-the-badge&logo=gitbook&logoColor=white" alt="Docs" /></a>
+  <a href="https://ego.octol.ing/document/"><img src="https://img.shields.io/badge/Docs-ego.octol.ing-1E90FF?style=for-the-badge&logo=gitbook&logoColor=white" alt="Docs" /></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-3DA639?style=for-the-badge" alt="License MIT" /></a>
 </p>
 
@@ -40,7 +39,7 @@ https://github.com/user-attachments/assets/ffe7954b-58ee-411e-b35d-ec30c58a08bc
 
 ## Быстрый старт
 
-ego tiny работает на macOS и Windows, а Linux — в [дорожной карте](https://lite.ego.app/roadmap).
+ego tiny работает на macOS и Windows, а Linux — в [дорожной карте](https://ego.octol.ing/roadmap).
 
 ### 1. Установка
 
@@ -48,9 +47,9 @@ ego tiny работает на macOS и Windows, а Linux — в [дорожно
 
 **1.1 Скачайте приложение**
 
-<a href="https://cdn.ego.app/setup/macos/arm64/egolite-Y7MbxKIuhzFB.dmg"><img src="https://img.shields.io/badge/⬇%20Apple%20Silicon-.dmg-000000?style=for-the-badge&logo=apple&logoColor=white" alt="Download ego tiny for Apple Silicon" /></a>
-<a href="https://cdn.ego.app/setup/macos/x64/egolite-Y7MbxKIuhzFB.dmg"><img src="https://img.shields.io/badge/⬇%20Intel-.dmg-000000?style=for-the-badge&logo=apple&logoColor=white" alt="Download ego tiny for Intel" /></a>
-<a href="https://cdn.ego.app/setup/windows/x64/egoliteSetup-Y7MbxKIuhzFB.exe"><img src="https://img.shields.io/badge/⬇%20Windows-.exe-000000?style=for-the-badge&logo=data:image/svg%2Bxml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI%2BPHBhdGggZmlsbD0iI2ZmZiIgZD0iTTAgMGgxMS4zNzd2MTEuMzcySDB6bTEyLjYyMyAwSDI0djExLjM3MkgxMi42MjN6TTAgMTIuNjIzaDExLjM3N1YyNEgwem0xMi42MjMgMEgyNFYyNEgxMi42MjN6Ii8%2BPC9zdmc%2B" alt="Download ego tiny for Windows" /></a>
+<a href="https://ego.octol.ing/download/ego-tiny-arm64.dmg"><img src="https://img.shields.io/badge/⬇%20Apple%20Silicon-.dmg-000000?style=for-the-badge&logo=apple&logoColor=white" alt="Download ego tiny for Apple Silicon" /></a>
+<a href="https://ego.octol.ing/download/ego-tiny-arm64.dmg"><img src="https://img.shields.io/badge/⬇%20Intel-.dmg-000000?style=for-the-badge&logo=apple&logoColor=white" alt="Download ego tiny for Intel" /></a>
+<a href="https://ego.octol.ing/"><img src="https://img.shields.io/badge/⬇%20Windows-.exe-000000?style=for-the-badge&logo=data:image/svg%2Bxml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI%2BPHBhdGggZmlsbD0iI2ZmZiIgZD0iTTAgMGgxMS4zNzd2MTEuMzcySDB6bTEyLjYyMyAwSDI0djExLjM3MkgxMi42MjN6TTAgMTIuNjIzaDExLjM3N1YyNEgwem0xMi42MjMgMEgyNFYyNEgxMi42MjN6Ii8%2BPC9zdmc%2B" alt="Download ego tiny for Windows" /></a>
 
 Нажмите, чтобы скачать, затем откройте файл и установите приложение. В обоих случаях ego tiny добавит Skill `ego-browser` — набор инструкций, который агент подхватывает сам — в каталог Skill каждого агента на вашем компьютере.
 
@@ -59,7 +58,7 @@ ego tiny работает на macOS и Windows, а Linux — в [дорожно
 Установите только Skill `ego-browser`:
 
 ```bash
-npx skills add citrolabs/ego-lite
+npx skills add dev-jelly/ego-tiny
 ```
 
 Когда агент впервые возьмётся за браузерную задачу, он подскажет, как установить приложение ego tiny, и проведёт по шагам.
@@ -69,7 +68,7 @@ npx skills add citrolabs/ego-lite
 Отправьте это своему агенту:
 
 ```
-Настрой ego tiny за меня: https://github.com/citrolabs/ego-lite
+Настрой ego tiny за меня: https://github.com/dev-jelly/ego-tiny
 
 Прочитай `skills/ego-browser/references/install.md` и выполни шаги, чтобы установить ego tiny.
 ```
@@ -131,23 +130,23 @@ ego-browser, подпишись за меня на @ego_agent в x.com
 
 ## Документация
 
-Туториалы, полный справочник по инструментам и гайды по интеграции — на [lite.ego.app/document/](https://lite.ego.app/document/).
+Туториалы, полный справочник по инструментам и гайды по интеграции — на [ego.octol.ing/document/](https://ego.octol.ing/document/).
 
 ## Сообщество
 
 - [Discord](https://discord.gg/5eGZVvHbTq) — вопросы, помощь с настройкой и обмен готовыми Skill
-- [GitHub Discussions](https://github.com/citrolabs/ego-lite/discussions) — идеи и развёрнутые обсуждения
+- [GitHub Discussions](https://github.com/dev-jelly/ego-tiny/discussions) — идеи и развёрнутые обсуждения
 - [X/Twitter](https://x.com/ego_agent) — обновления и релизы
 
 ## История звёзд
 
-<a href="https://github.com/citrolabs/ego-lite/stargazers">
+<a href="https://github.com/dev-jelly/ego-tiny/stargazers">
 <!-- star-history:start -->
 <!-- Generated daily by .github/workflows/star-history.yml and published to the
      'star-history' branch, because main's ruleset will not take a bot commit. -->
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/citrolabs/ego-lite/star-history/star-history-dark.svg">
-  <img alt="Star history" src="https://raw.githubusercontent.com/citrolabs/ego-lite/star-history/star-history-light.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/dev-jelly/ego-tiny/star-history/star-history-dark.svg">
+  <img alt="Star history" src="https://raw.githubusercontent.com/dev-jelly/ego-tiny/star-history/star-history-light.svg">
 </picture>
 <!-- star-history:end -->
 </a>

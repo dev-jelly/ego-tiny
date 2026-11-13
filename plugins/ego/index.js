@@ -9,7 +9,7 @@ const skillFile = fileURLToPath(
 // OpenCode 1 calls server() and OpenCode 2 calls setup(); each ignores the
 // other, so one default export serves both.
 export default {
-  id: "citrolabs.ego",
+  id: "dev-jelly.ego-tiny",
   async server() {
     return {
       config: async (config) => {

@@ -291,7 +291,7 @@ function assertArtifacts(root, output, name, version, skillName) {
           assert.deepEqual(pkg.pi.skills, ["./skills"]);
           assert.equal(
             pkg.pi.image,
-            `https://raw.githubusercontent.com/citrolabs/ego-lite/v${sourcePackage.version}/skills/ego-browser/assets/logo.png`,
+            `https://raw.githubusercontent.com/dev-jelly/ego-tiny/v${sourcePackage.version}/skills/ego-browser/assets/logo.png`,
             "the gallery image is pinned to the plugin's release tag",
           );
         } else {

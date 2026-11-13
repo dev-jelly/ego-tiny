@@ -6,11 +6,12 @@
 ## 원칙
 
 1. **ego tiny의 변경은 `tiny/` 안에 둔다.** 원본 파일을 직접 고치지 않습니다. 원본 파일을 고치면 병합할 때마다 충돌합니다.
-2. **원본 파일에 허용된 변경은 세 가지뿐이다.** 모두 스크립트가 다시 만들어 낼 수 있습니다.
+2. **원본 파일에 허용된 변경은 네 가지뿐이다.** 모두 스크립트가 다시 만들어 낼 수 있습니다.
    - 제품 이름 치환 (`tiny/rename-source.sh`)
+   - 프로젝트 링크·설치 파일 주소를 octol.ing으로 (`tiny/rebrand-links.sh`, 값은 `tiny/links.env`)
    - 최상위 `README.md` (ego tiny의 것으로 유지)
    - `AGENTS.md` 맨 위의 ego tiny 안내 블록 (`tiny/agents-head.md`)
-3. **충돌은 원본 쪽으로 해결한다.** 그런 다음 위 세 가지를 다시 입힙니다. 손으로 충돌을 풀지 않습니다.
+3. **충돌은 원본 쪽으로 해결한다.** 그런 다음 위 네 가지를 다시 입힙니다. 손으로 충돌을 풀지 않습니다.
 4. **런타임 동작을 바꾸고 싶으면 빌드 단계에서 바꾼다.** `tiny/build-tiny.sh`가 빌드 결과물을 고칩니다(예: 상태 디렉터리 `~/.ego-tiny`). `package/ego-browser/src`는 원본 그대로 둡니다.
 5. **전송이 살아 있는 빌드를 만들지 않는다.** 패치 대상이 사라지면 빌드는 실패해야 합니다. 실패를 건너뛰게 고치지 말고, 원인을 다시 조사합니다.
 
@@ -27,12 +28,31 @@
 tiny/sync-upstream.sh --install
 ```
 
+## octol.ing 링크
+
+프로젝트 정보와 설치 파일 주소는 `tiny/links.env` 한 곳에서 관리합니다.
+
+| 값 | 원본 | 바뀌는 곳 |
+| --- | --- | --- |
+| `EGO_TINY_SITE` | `lite.ego.app` | 문서·개인정보·약관 링크, 앱 웹 UI 안의 링크 |
+| `EGO_TINY_DOWNLOAD` | `cdn.ego.app/setup/…` | 설치 스크립트, README 다운로드 배지 |
+| `EGO_TINY_REPO` | `citrolabs/ego-lite` | 저장소·이슈·마켓플레이스 주소 |
+| `EGO_TINY_OWNER`, `EGO_TINY_CONTACT` | `citrolabs`, `contact@citrolabs.ai` | 플러그인·마켓플레이스 manifest |
+
+값을 바꾸면 `tiny/apply-overlay.sh`(저장소)와 `tiny/build-tiny.sh --install`(앱)을 실행합니다.
+원본 출처를 밝히는 곳(`README.md`, `tiny/`, `AGENTS.md`의 안내 블록)과 병합용 `upstream` 리모트는 `citrolabs/ego-lite` 그대로 둡니다.
+앱 바이너리 안의 링크는 길이를 바꿀 수 없어 그대로 두고, 실행 플래그로 막습니다.
+
+설치 파일은 `tiny/package-dmg.sh`로 `build/ego-tiny-arm64.dmg`를 만들고, `EGO_TINY_DOWNLOAD` 주소에 올립니다.
+이 DMG는 Citro Labs의 비공개 앱을 패치한 복사본이므로, 공개 배포하지 말고 본인 기기용으로만 씁니다.
+
 ## 저장소 업데이트 절차
 
 1. 작업 트리를 깨끗하게 만든다(커밋하거나 stash).
 2. `tiny/sync-upstream.sh`를 실행한다. 하는 일:
    - `upstream/main`을 가져와 병합한다. 충돌은 원본 쪽을 택한다.
-   - `tiny/apply-overlay.sh`로 이름 치환, `README.md`, `AGENTS.md` 블록을 다시 입힌다.
+   - `tiny/apply-overlay.sh`로 이름 치환, octol.ing 링크, `README.md`, `AGENTS.md` 블록을 다시 입힌다.
+   - 원본이 새로운 형태의 Citro Labs 링크를 추가했으면 `tiny/rebrand-links.sh`가 실패하며 그 위치를 보여 준다. 규칙을 추가하고 다시 실행한다.
    - 런타임 테스트(`npm test`)를 돌린다.
 3. 테스트가 실패하면 원본에서도 실패하는지 먼저 확인한다(`git stash` 없이 `upstream/main`을 따로 체크아웃해 비교). 원본에서도 실패하면 ego tiny의 문제가 아니다.
 4. 원본이 새 파일에 `ego lite`를 새로운 표기로 썼는지 확인한다. 아래 명령의 결과가 비어 있어야 한다.

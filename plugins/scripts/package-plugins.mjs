@@ -86,7 +86,7 @@ const TARGETS = [
     package: (version) => ({
       pi: {
         skills: ["./skills"],
-        image: `https://raw.githubusercontent.com/citrolabs/ego-lite/v${version}/skills/ego-browser/assets/logo.png`,
+        image: `https://raw.githubusercontent.com/dev-jelly/ego-tiny/v${version}/skills/ego-browser/assets/logo.png`,
       },
     }),
   },

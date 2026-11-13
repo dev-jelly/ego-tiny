@@ -4,7 +4,7 @@ Read `install.md` first; it covers upgrading an older ego tiny and the onboardin
 
 ## Run the installer
 
-There is no install script for Windows. Have the user download the installer from https://lite.ego.app/ and run it, then open ego tiny.
+There is no install script for Windows. Have the user download the installer from https://ego.octol.ing/ and run it, then open ego tiny.
 
 After the app opens, the user completes the first-run onboarding in the app (see `install.md`). Onboarding registers the `ego-browser` command on the PATH. The PATH entry only reaches processes started afterwards, so open a new terminal before checking for the command.
 
